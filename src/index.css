@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face{
+    font-family: "Ubuntu";
+    src:local("Ubuntu-Regular"),
+    url('./assets/fonts/Ubuntu-Regular.ttf') 
+  }
+  @font-face{
+    font-family: "Zeyada";
+    src:local("Zeyada-Regular"),
+    url('./assets/fonts/Zeyada-Regular.ttf') 
+  }
+
+
