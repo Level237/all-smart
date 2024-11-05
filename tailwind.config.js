@@ -1,14 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme')
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {fontFamily: {
       'primary': ['"Ubuntu"', ...defaultTheme.fontFamily.sans],
-      'level':['"Zeyada"',],
+      'secondary':['"Zeyada"',],
     },},
   },
   plugins: [],
