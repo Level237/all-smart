@@ -7,7 +7,7 @@ export default {
   	extend: {
   		fontFamily: {
   			primary: ['Ubuntu"', ...defaultTheme.fontFamily.sans],
-  			secondary: ['Zeyada"',]
+  			second: ['Zeyada"',]
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

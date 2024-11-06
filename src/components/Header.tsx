@@ -1,5 +1,6 @@
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useRef, useState } from "react";
+import { Button } from "./ui/button";
 
 export default function Header() {
     const [isHidden, setIsHidden] = useState(false);
@@ -48,6 +49,7 @@ export default function Header() {
        <h2 className="text-lg cursor-pointer font-primary">Nous Sommes AllSmart</h2>
         <h2 className="text-lg font-primary">Expertises</h2>
         <h2 className="text-lg font-primary" >Réalisations</h2>
+        <Button className="text-md">Contactez-nous</Button>
        </div>
        
         
