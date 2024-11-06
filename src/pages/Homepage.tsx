@@ -10,7 +10,13 @@ export default function Homepage() {
     
         <Hero/>
     <section className='bg-[#232323] py-12'>
-    <ListBrand/>
+      <div className='flex flex-col items-center justify-center gap-4'>
+      <ListBrand/>
+      <div>
+        <h2 className='text-white underline font-primary text-xl'>Voir la liste complète de nos partenaires</h2>
+      </div>
+      </div>
+    
     </section>
     </>
   )

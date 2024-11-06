@@ -28,7 +28,7 @@ export default function Header() {
         },
       }}
       transition={{ duration: 0.2 }}
-      className="fixed right-0 top-0 z-10 flex w-full justify-center pt-3"
+      className="fixed right-0 top-0 z-[999] flex w-full justify-center pt-3"
     >
       <nav className="flex min-w-[60rem] justify-between px-16 gap-3 rounded-2xl bg-gray-200 p-5    *:px-7 *:py-2 *:transition-colors *:duration-300  focus-visible:*:bg-gray-200">
         <div className="w-44">
