@@ -16,4 +16,7 @@
     
     <!-- Section Nos Offres -->
     <x-homepage.offer />
+    
+    <!-- Section Nos Succès -->
+    <x-homepage.success />
 @endsection
