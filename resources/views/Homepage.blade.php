@@ -19,4 +19,7 @@
     
     <!-- Section Nos Succès -->
     <x-homepage.success />
+    
+    <!-- Section Partenaires -->
+    <x-homepage.partner />
 @endsection
