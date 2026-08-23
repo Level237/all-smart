@@ -20,5 +20,5 @@
 
 <!-- Orange Content Section -->
  <x-about.intro />
-
+<x-homepage.cta />
 @endsection
