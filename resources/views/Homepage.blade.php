@@ -22,8 +22,12 @@
 
     <!-- Section Blog -->
     
+
+    <!-- Section CTA -->
+   
     
     <!-- Section Partenaires -->
     <x-homepage.partner />
-    <x-homepage.blog />
+<x-homepage.blog />
+     <x-homepage.cta />
 @endsection

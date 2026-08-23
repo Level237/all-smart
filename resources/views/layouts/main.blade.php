@@ -48,5 +48,9 @@
         {{ $slot ?? '' }}
     </main>
 
+    @if(View::exists('components.footer'))
+        <x-footer />
+    @endif
+
 </body>
 </html>
