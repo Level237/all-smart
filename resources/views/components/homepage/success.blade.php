@@ -1,4 +1,4 @@
-<section id="succes" class="py-16 overflow-hidden md:py-24 bg-[#edf2f6]">
+<section id="succes" class="py-16 overflow-hidden md:py-24 bg-[#3D6B7A]/20">
 
     <!-- Conteneur pour le Titre (Centré et contraint en largeur) -->
     <div class="px-4 mx-auto mb-10 max-w-7xl text-center">

@@ -1,4 +1,4 @@
-<section id="partenaires" class="py-16 bg-[#edf2f6] md:py-24">
+<section id="partenaires" class="py-16  bg-[#3D6B7A]/20 md:py-24">
     
     <!-- Ligne décorative supérieure -->
     <div class="flex justify-center mb-8">
