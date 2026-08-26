@@ -129,13 +129,13 @@
 
                 <!-- Right: Side Menu (Sticky) -->
                 <aside class="relative lg:sticky lg:top-44 lg:self-start">
-                    <div class="overflow-hidden rounded-tl-[32px] bg-[#f5771d] shadow-[0_20px_50px_rgba(245,119,29,0.25)]">
+                    <div class="overflow-hidden rounded-[32px] bg-[#f5771d] shadow-[0_20px_50px_rgba(245,119,29,0.25)]">
                         <div class="p-4 sm:p-6 md:p-7 lg:p-8">
-                            <div class="space-y-1">
+                            <div class="space-y-6">
                                 @foreach($service['sideItems'] as $index => $item)
-                                    <div class="{{ $item['active'] ? 'bg-[#f4b896] rounded-lg px-3 py-2 sm:px-4 sm:py-3' : 'border-b border-white/30 last:border-b-0' }}">
+                                    <div class="{{ $item['active'] ? 'bg-[#f4b896]   px-3 py-2 sm:px-4 sm:py-3' : 'border-b mb-4  border-white/30 ' }}">
                                         <a href="{{ $item['url'] }}" 
-                                           class="block py-1.5 text-[1rem] font-bold leading-snug tracking-[-0.01em] {{ $item['active'] ? 'text-gray-900' : 'text-white' }} transition-all duration-300 hover:opacity-85 sm:text-[1.15rem] lg:text-[1.35rem]">
+                                           class="block  py-1.5 text-[1rem] font-bold leading-snug tracking-[-0.01em] {{ $item['active'] ? 'text-gray-900' : 'text-white' }} transition-all duration-300 hover:opacity-85 sm:text-[1.15rem] lg:text-[1.35rem]">
                                             {{ $item['name'] }}
                                         </a>
                                     </div>
@@ -174,9 +174,9 @@
             </div>
         </section>
     @elseif(($service['cta']['type'] ?? 'default') === 'content-cta')
-        <section class="relative overflow-hidden  bg-[#d76a1e]">
-            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.9]" style="background-image: url('{{ asset($service['cta']['background']) }}');"></div>
-             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+        <section class="relative overflow-hidden  ">
+            <div class="absolute inset-0 bg-cover bg-center " style="background-image: url('{{ asset($service['cta']['background']) }}');"></div>
+             <div class="absolute inset-0 "></div>
 
             <div class="relative z-10 mx-auto max-w-[1500px] px-4 py-8 sm:px-6 lg:px-8 lg:py-24">
                 <div class="mx-auto max-w-[1200px] text-center text-white">
@@ -198,10 +198,34 @@
         </section>
 
     @elseif(($service['cta']['type'] ?? 'default') === 'branding')
+        <section class="relative overflow-hidden ">
+            <div class="absolute inset-0 bg-cover bg-center animate-zoom-slow" style="background-image: url('{{ asset($service['cta']['background']) }}');"></div>
+             <div class="absolute inset-0"></div>
+
+            <div class="relative z-10 mx-auto max-w-[1500px] px-4 py-8 sm:px-6 lg:px-8 lg:py-32">
+                <div class="mx-auto max-w-[1200px] text-center text-white">
+                    <p class="text-3xl font-light leading-none text-white sm:text-xl md:text-xl lg:text-5xl">
+                        {{ $service['cta']['title'] }}
+                    </p>
+
+                    <p class="mt-2 text-[2rem] font-black leading-[0.9] tracking-[-0.04em] text-white sm:text-[3rem] lg:text-[6rem]">
+                        {{ $service['cta']['subtitle'] }}
+                    </p>
+
+                    <div class="mt-8 flex justify-center">
+                        <a href="#contact" class="inline-flex items-center justify-center rounded-[18px] bg-[#3D6B7A] px-8 py-4 text-xl font-bold text-white  transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4e8ca0] focus:outline-none focus:ring-4 focus:ring-[#5d9daf]/30 sm:px-12 sm:py-5 sm:text-[2rem] lg:px-16 lg:py-5 lg:text-[1.5rem]">
+                            {{ $service['cta']['button'] }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    @elseif(($service['cta']['type'] ?? 'default') === 'event')
         <section class="relative overflow-hidden  bg-[#d76a1e]">
             <div class="absolute inset-0 bg-cover bg-center animate-zoom-slow" style="background-image: url('{{ asset($service['cta']['background']) }}');"></div>
-             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-
+             <div class="absolute inset-0"></div>
+        
             <div class="relative z-10 mx-auto max-w-[1500px] px-4 py-8 sm:px-6 lg:px-8 lg:py-32">
                 <div class="mx-auto max-w-[1200px] text-center text-white">
                     <p class="text-3xl font-light leading-none text-white sm:text-xl md:text-xl lg:text-5xl">

@@ -1,3 +1,15 @@
+@php
+    $serviceMenu = [
+        'Stratégie & Conseil' => '/services/strategie-et-conseil',
+        'Community Management' => '/services/community-management',
+        'Création de Contenus' => '/services/creation-de-contenus',
+        'Personal Branding' => '/services/personal-branding',
+        'Site Internet' => '/services/site-internet',
+        'Activations & Événementiel' => '/services/activations-evenementiel',
+        'Marketing d\'Influence' => '/services/marketing-d-influence',
+    ];
+@endphp
+
 <header class="fixed top-0 left-0 right-0 z-50 w-full pt-6 transition-all duration-300"
     x-data="{ mobileMenuOpen: false }">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -28,6 +40,17 @@
                             <path d="M9 18l6-6-6-6v12z" />
                         </svg>
                     </button>
+
+                    <div class="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-200">
+                        <div class="min-w-[260px] rounded-2xl border border-gray-200/70 bg-white/95 p-2 shadow-[0_18px_40px_rgba(0,0,0,0.12)] backdrop-blur-sm">
+                            @foreach($serviceMenu as $label => $url)
+                                <a href="{{ $url }}"
+                                   class="block rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 transition-colors hover:bg-[#fef2e8] hover:text-[#f5771d]">
+                                    {{ $label }}
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
 
                 <div class="relative group">
@@ -117,9 +140,19 @@
                     <a href="#qui-sommes-nous"
                         class="block px-4 py-3 text-lg font-bold text-gray-900 transition-all rounded-xl hover:bg-white/50 hover:text-[#f5771d] hover:translate-x-2">Qui
                         sommes-nous ?</a>
-                    <a href="#services"
-                        class="block px-4 py-3 text-lg font-bold text-gray-900 transition-all rounded-xl hover:bg-white/50 hover:text-[#f5771d] hover:translate-x-2">Nos
-                        services</a>
+
+                    <div class="rounded-xl border border-white/40 bg-white/20 px-2 py-2">
+                        <div class="px-2 pb-2 text-sm font-bold uppercase tracking-wide text-[#f5771d]">Nos services</div>
+                        <div class="flex flex-col space-y-1">
+                            @foreach($serviceMenu as $label => $url)
+                                <a href="{{ $url }}"
+                                   class="block rounded-lg px-3 py-2 text-base font-medium text-gray-900 transition-all hover:bg-[#fef2e8] hover:text-[#f5771d]">
+                                    {{ $label }}
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+
                     <a href="#realisations"
                         class="block px-4 py-3 text-lg font-bold text-gray-900 transition-all rounded-xl hover:bg-white/50 hover:text-[#f5771d] hover:translate-x-2">Réalisations</a>
                     <a href="#blog"
