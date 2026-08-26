@@ -69,7 +69,7 @@
                 
                 <!-- Left: Content -->
                 <article class="bg-white px-5 py-6 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-                    <h1 class="text-[2rem] font-black leading-[0.95] tracking-[-0.02em] {{ $service['titleClass'] }} sm:text-[2.8rem] lg:text-[4rem]">
+                    <h1 class="text-[2rem] font-black leading-[0.95] tracking-[-0.02em] {{ $service['titleClass'] }} sm:text-[2.8rem] lg:text-[3rem]">
                         {{ $service['title'] }}
                     </h1>
 
@@ -176,7 +176,7 @@
     @elseif(($service['cta']['type'] ?? 'default') === 'content-cta')
         <section class="relative overflow-hidden  bg-[#d76a1e]">
             <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.9]" style="background-image: url('{{ asset($service['cta']['background']) }}');"></div>
-            <div class="absolute inset-0 bg-[#d76a1e]/65"></div>
+             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
 
             <div class="relative z-10 mx-auto max-w-[1500px] px-4 py-8 sm:px-6 lg:px-8 lg:py-24">
                 <div class="mx-auto max-w-[1200px] text-center text-white">
@@ -190,6 +190,30 @@
 
                     <div class="mt-8 flex justify-center">
                         <a href="#contact" class="inline-flex items-center justify-center rounded-[18px] bg-[#5d9daf] px-8 py-4 text-xl font-bold text-white shadow-[0_16px_28px_rgba(70,123,136,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4e8ca0] focus:outline-none focus:ring-4 focus:ring-[#5d9daf]/30 sm:px-12 sm:py-5 sm:text-[2rem] lg:px-16 lg:py-5 lg:text-[1.5rem]">
+                            {{ $service['cta']['button'] }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    @elseif(($service['cta']['type'] ?? 'default') === 'branding')
+        <section class="relative overflow-hidden  bg-[#d76a1e]">
+            <div class="absolute inset-0 bg-cover bg-center animate-zoom-slow" style="background-image: url('{{ asset($service['cta']['background']) }}');"></div>
+             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+
+            <div class="relative z-10 mx-auto max-w-[1500px] px-4 py-8 sm:px-6 lg:px-8 lg:py-32">
+                <div class="mx-auto max-w-[1200px] text-center text-white">
+                    <p class="text-3xl font-light leading-none text-white sm:text-xl md:text-xl lg:text-5xl">
+                        {{ $service['cta']['title'] }}
+                    </p>
+
+                    <p class="mt-2 text-[2rem] font-black leading-[0.9] tracking-[-0.04em] text-white sm:text-[3rem] lg:text-[6rem]">
+                        {{ $service['cta']['subtitle'] }}
+                    </p>
+
+                    <div class="mt-8 flex justify-center">
+                        <a href="#contact" class="inline-flex items-center justify-center rounded-[18px] bg-[#3D6B7A] px-8 py-4 text-xl font-bold text-white  transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4e8ca0] focus:outline-none focus:ring-4 focus:ring-[#5d9daf]/30 sm:px-12 sm:py-5 sm:text-[2rem] lg:px-16 lg:py-5 lg:text-[1.5rem]">
                             {{ $service['cta']['button'] }}
                         </a>
                     </div>
