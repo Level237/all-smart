@@ -14,7 +14,7 @@ Ce fichier recense l'ensemble des tâches et fonctionnalités ordonnées.
 
 ### Phase 1 — Front-Office & Alignement Figma
 - [x] **B-01** : Application des ajustements design de Louis sur la page d'accueil (`Homepage.blade.php`) pour correspondre au frame Figma `#2:2`.
-- [ ] **B-02** : Application des ajustements design de Louis sur la page "Qui Sommes-Nous" (`AboutUs.blade.php`, frame `#48:40`).
+- [x] **B-02** : Application des ajustements design de Louis sur la page "Qui Sommes-Nous" (`AboutUs.blade.php`, frame `#48:40`).
 - [ ] **B-03** : Alignement design et composants des 7 pages Services (`Services.blade.php` & configs).
 - [ ] **B-04** : Intégration des pages Packs restantes : Pack Croissance (frame `#316:118`) et Pack Image Premium (`#316:191`).
 - [ ] **B-05** : Intégration de l'interface "Liste des Influenceurs partenaires" avec filtres catégories/plateformes (frames Figma `#321:432` et `#327:599`).

@@ -1,6 +1,6 @@
 <section class="relative -mt-32 lg:-mt-40 px-4 sm:px-6 lg:px-8 pb-16">
     <div class="mx-auto max-w-6xl">
-        <div class="rounded-[32px] bg-[#f58a3d] px-6 py-10 shadow-[0_18px_44px_rgba(17,24,39,0.12)] sm:px-10 sm:py-12 lg:px-14 lg:py-16">
+        <div class="rounded-[32px] bg-[#F5791F] px-6 py-10 shadow-[0_18px_44px_rgba(17,24,39,0.12)] sm:px-10 sm:py-12 lg:px-14 lg:py-16">
             
             <!-- Main Title -->
             <div class="mb-10">
@@ -49,19 +49,19 @@
                     <h3 class="text-xl font-bold">Analyse</h3>
                 </div>
                 <!-- Connector Circle -->
-                <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-gray-300 rounded-full border-4 border-[#f58a3d] z-10"></div>
+                <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-gray-300 rounded-full border-4 border-[#F5791F] z-10"></div>
             </div>
 
             <!-- Step 2: Stratégie -->
             <div class="relative flex-1">
-                <div class="bg-[#FC6E07] rounded-2xl mr-3 p-6 text-white shadow-lg text-center group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 min-h-[160px] flex flex-col items-center justify-center">
+                <div class="bg-[#F5791F] rounded-2xl mr-3 p-6 text-white shadow-lg text-center group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 min-h-[160px] flex flex-col items-center justify-center">
                     <div class="mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full  group-hover:scale-110 transition-transform duration-300">
                         <img src="{{ asset('assets/icons/strategie.png') }}" alt="Stratégie" class="h-8 w-8 object-contain" />
                     </div>
                     <h3 class="text-xl font-bold">Stratégie</h3>
                 </div>
                 <!-- Connector Circle -->
-                <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-gray-300 rounded-full border-4 border-[#f58a3d] z-10"></div>
+                <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-gray-300 rounded-full border-4 border-[#F5791F] z-10"></div>
             </div>
 
             <!-- Step 3: Exécution -->
@@ -73,7 +73,7 @@
                     <h3 class="text-xl font-bold">Exécution</h3>
                 </div>
                 <!-- Connector Circle -->
-                <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-gray-300 rounded-full border-4 border-[#f58a3d] z-10"></div>
+                <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-gray-300 rounded-full border-4 border-[#F5791F] z-10"></div>
             </div>
 
             <!-- Step 4: Optimisation -->
@@ -95,7 +95,7 @@
                 </div>
                 <h3 class="text-xl font-bold">Analyse</h3>
             </div>
-            <div class="bg-[#FC6E07] rounded-2xl p-6 text-white shadow-lg text-center">
+            <div class="bg-[#F5791F] rounded-2xl p-6 text-white shadow-lg text-center">
                 <div class="mx-auto mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-white/20">
                     <img src="{{ asset('assets/strategie.png') }}" alt="Stratégie" class="h-8 w-8 object-contain" />
                 </div>
@@ -132,8 +132,8 @@
     </div>
 
     <!-- Container bleu centré en bas, plus étroit que le parent -->
-    <div class="mb-[-110px] mt-12 mx-auto w-[85%]  max-w-4xl overflow-hidden rounded-[24px] bg-[#3f8fa2] px-6 py-10 sm:px-10 lg:px-12">
-        <div class="grid grid-cols-5 gap-4 md:gap-6 lg:gap-8">
+    <div class="mb-[-80px] lg:mb-[-110px] mt-12 mx-auto w-[92%] sm:w-[85%] max-w-4xl overflow-hidden rounded-[24px] bg-[#3f8fa2] px-6 py-10 sm:px-10 lg:px-12">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 justify-items-center">
             @foreach(['01', '02', '03', '04', '05'] as $value)
                 <div class="flex flex-col items-center justify-center text-center text-white">
                     <!-- Diamond with sparkles -->
@@ -161,13 +161,13 @@
 </div>
 
     <section class="mt-24 pb-8 lg:mt-28">
-    <div class="bg-[#f58a3d] px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+    <div class="bg-[#F5791F] px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
         <div class="mx-auto max-w-[1400px]">
             <!-- Titre -->
-            <h2 class="text-[1rem] font-black leading-none tracking-[-0.05em] text-[#2b221e] sm:text-[4rem] lg:text-md">
+            <h2 class="text-3xl font-black leading-none tracking-[-0.05em] text-[#2b221e] sm:text-5xl lg:text-6xl">
                 La Smart team
             </h2>
-            <div class="mt-6 h-2 w-24 bg-[#2b221e] lg:mt-8"></div>
+            <div class="mt-4 sm:mt-6 h-2 w-24 bg-[#2b221e] lg:mt-8"></div>
 
             <!-- Grid des membres -->
             <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -225,15 +225,15 @@
 
                         <!-- Bandeau bleu qui s'agrandit au hover -->
                         <div class="absolute bottom-0 left-0 right-0 bg-[#5f8d96] px-5 pb-5 pt-4 transition-all duration-500 ease-out sm:px-6 sm:pb-6 sm:pt-5
-                                    h-[70px] group-hover:h-[220px] lg:group-hover:h-[240px]">
+                                    h-auto md:h-[70px] md:group-hover:h-[220px] lg:group-hover:h-[240px]">
                             
                             <!-- Nom (toujours visible) -->
                             <h3 class="text-2xl font-medium leading-tight text-white sm:text-3xl lg:text-4xl">
                                 {!! $member['name'] !!}
                             </h3>
 
-                            <!-- Contenu qui apparaît au hover -->
-                            <div class="mt-3 overflow-hidden transition-all duration-500 ease-out opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+                            <!-- Contenu visible sur mobile et révélé au hover sur desktop -->
+                            <div class="mt-3 overflow-hidden transition-all duration-500 ease-out opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0">
                                 @if($member['role'])
                                     <p class="text-xl font-medium text-white sm:text-2xl">{{ $member['role'] }}</p>
                                 @endif

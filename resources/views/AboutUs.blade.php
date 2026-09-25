@@ -11,7 +11,7 @@
         <img src="{{ asset('assets/slideabout.jpg') }}" 
              alt="Team collaboration" 
              class="h-full w-full object-cover object-center">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-[#f58a3d]/90"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-[#F5791F]/90"></div>
     </div>
 
     <!-- Content Container -->
