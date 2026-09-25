@@ -1,58 +1,86 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Template — Équipe d'agents pour site vitrine Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Où mettre ces fichiers
 
-## About Laravel
+Copie tout ce dossier à la racine de ton projet Laravel. La structure
+finale doit ressembler à ça :
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+```
+mon-projet-laravel/
+├── .github/
+│   └── agents/
+│       ├── marco.agent.md
+│       ├── julio.agent.md
+│       ├── louis.agent.md
+│       ├── emilie.agent.md
+│       ├── emile.agent.md
+│       └── paul.agent.md
+├── docs/
+│   ├── PRODUCT.md
+│   ├── ARCHITECTURE.md
+│   ├── DESIGN.md
+│   ├── DECISIONS.md
+│   ├── BACKLOG.md
+│   ├── PROMPTS.md
+│   ├── QA.md
+│   ├── ROADMAP.md
+│   ├── SECURITY-JOURNAL.md
+│   └── BUG-JOURNAL.md
+├── rules.md
+├── app/            ← déjà généré par Laravel
+├── routes/         ← déjà généré par Laravel
+└── ...
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Le dossier `.github/agents/` est l'emplacement reconnu par VS Code /
+GitHub Copilot pour les agents personnalisés — chaque fichier
+`xxx.agent.md` apparaît automatiquement dans le sélecteur d'agent du
+chat, ou s'invoque avec `@xxx` (ex : `@marco`, `@julio`).
 
-## Contributing
+## Avant de commencer (obligatoire)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Remplace tous les `[...]` avant la première demande faite à Marco :
 
-## Code of Conduct
+1. `docs/PRODUCT.md` — ton activité, ta cible, tes pages.
+2. `docs/ARCHITECTURE.md` — la version de Laravel/PHP utilisée.
+3. `docs/DESIGN.md` — ta police (fonts.google.com) et ta palette
+   (coolors.co).
+4. `rules.md` — le nom du projet et sa description.
+5. `docs/BACKLOG.md` — ajuste la liste des pages si besoin.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Les fichiers `docs/DECISIONS.md`, `docs/PROMPTS.md` et `docs/QA.md` sont
+déjà prêts à l'emploi — tu les remplis au fil du projet, pas avant.
 
-## Security Vulnerabilities
+## Comment utiliser l'équipe au quotidien
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Demande à **Marco** de construire une page du backlog :
+   `@marco construis la page d'accueil du backlog.`
+2. Une fois la page construite, appelle un ou plusieurs relecteurs :
+   `@louis vérifie cette page.`
+   `@julio vérifie l'architecture de cette page.`
+3. Lis le rapport (un tableau court), puis dis à Marco quoi appliquer :
+   `@marco applique les points 1 et 2 de la revue de Louis.`
+4. En fin de fonctionnalité, appelle **Emile** :
+   `@emile teste la page d'accueil.`
+5. Avant de mettre le site en ligne, appelle **Paul** et **Emilie** :
+   `@paul audite le projet.`
+   `@emilie propose la stratégie SEO du site.`
 
-## License
+## Ce qui n'est PAS inclus dans ce template
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Lamine** (performance) : pas nécessaire pour un site vitrine simple.
+  Si le site grossit ou devient lent, demande le template "e-commerce"
+  qui l'inclut.
+- Un système de compte utilisateur ou de paiement : si ton projet en a
+  besoin, ce n'est plus un site vitrine — utilise le template
+  "vente en ligne", qui inclut un Paul en version complète (pas la
+  version allégée de ce template).
+
+## Règle d'or à ne jamais casser
+
+Seul **Marco** modifie le code de l'application. Tous les autres agents
+sont soit en lecture seule (Julio, Louis, Emilie), soit limités à un
+seul fichier journal (Paul → SECURITY-JOURNAL.md, Emile →
+BUG-JOURNAL.md). Ne donne jamais l'outil `edit` sur le code lui-même à
+un agent d'audit — c'est ce qui garantit qu'une seule "main" touche
+l'application, et que tu sais toujours qui a changé quoi.
