@@ -8,7 +8,7 @@
         <!-- En-tête de la section -->
         <div class="mb-16 text-center md:mb-24">
             <h2 class="text-4xl z-10 font-bold tracking-tight text-white  sm:text-5xl lg:text-6xl">
-                <span class="text-[#f5771d] font-zeyada  text-5xl sm:text-6xl lg:text-7xl"> Nos offres</span>
+                <span class="text-[#F5791F] font-zeyada  text-5xl sm:text-6xl lg:text-7xl"> Nos offres</span>
 
             </h2>
             <h2 class="mt-[-20px] z-5 text-white font-bold text-4xl tracking-tight">Chez AllSmart</h2>
@@ -30,11 +30,11 @@
 
                 <!-- Bande Orange Extensible -->
                 <div
-                    class="relative flex flex-col items-center justify-end w-full h-20 transition-all duration-500 bg-[#f5771d] group-hover:h-56">
+                    class="relative flex flex-col items-center justify-end w-full h-44 md:h-20 transition-all duration-500 bg-[#F5791F] md:group-hover:h-56">
 
                     <!-- Forme décorative ombre diagonale -->
                     <div
-                        class="absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        class="absolute inset-0 overflow-hidden opacity-100 md:opacity-0 transition-opacity duration-500 md:group-hover:opacity-100">
                         <div class="absolute bottom-0 right-0 w-full h-full bg-black/10"
                             style="clip-path: polygon(100% 0, 100% 100%, 0% 100%);"></div>
                     </div>
@@ -47,8 +47,8 @@
 
                     <!-- Texte -->
                     <div
-                        class="z-10 flex flex-col items-center justify-center w-full pb-8 transition-all duration-500 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-                        <h3 class="text-[32px] leading-tight text-center text-white">
+                        class="z-10 flex flex-col items-center justify-center w-full pb-6 md:pb-8 transition-all duration-500 translate-y-0 opacity-100 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+                        <h3 class="text-2xl md:text-[32px] leading-tight text-center text-white">
                             <span class="font-light">Strategie</span><br>
                             <span class="font-bold">Marketing</span>
                         </h3>
@@ -66,9 +66,9 @@
                 </div>
 
                 <div
-                    class="relative flex flex-col items-center justify-end w-full h-20 transition-all duration-500 bg-[#f5771d] group-hover:h-56">
+                    class="relative flex flex-col items-center justify-end w-full h-44 md:h-20 transition-all duration-500 bg-[#F5791F] md:group-hover:h-56">
                     <div
-                        class="absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        class="absolute inset-0 overflow-hidden opacity-100 md:opacity-0 transition-opacity duration-500 md:group-hover:opacity-100">
                         <div class="absolute bottom-0 right-0 w-full h-full bg-black/10"
                             style="clip-path: polygon(100% 0, 100% 100%, 0% 100%);"></div>
                     </div>
@@ -79,8 +79,8 @@
                     </div>
 
                     <div
-                        class="z-10 flex flex-col items-center justify-center w-full pb-8 transition-all duration-500 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-                        <h3 class="text-[32px] leading-tight text-center text-white">
+                        class="z-10 flex flex-col items-center justify-center w-full pb-6 md:pb-8 transition-all duration-500 translate-y-0 opacity-100 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+                        <h3 class="text-2xl md:text-[32px] leading-tight text-center text-white">
                             <span class="font-light">Tarifs</span><br>
                             <span class="font-bold">Compétitifs</span>
                         </h3>
@@ -98,9 +98,9 @@
                 </div>
 
                 <div
-                    class="relative flex flex-col items-center justify-end w-full h-20 transition-all duration-500 bg-[#f5771d] group-hover:h-56">
+                    class="relative flex flex-col items-center justify-end w-full h-44 md:h-20 transition-all duration-500 bg-[#F5791F] md:group-hover:h-56">
                     <div
-                        class="absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        class="absolute inset-0 overflow-hidden opacity-100 md:opacity-0 transition-opacity duration-500 md:group-hover:opacity-100">
                         <div class="absolute bottom-0 right-0 w-full h-full bg-black/10"
                             style="clip-path: polygon(100% 0, 100% 100%, 0% 100%);"></div>
                     </div>
@@ -111,8 +111,8 @@
                     </div>
 
                     <div
-                        class="z-10 flex flex-col items-center justify-center w-full pb-8 transition-all duration-500 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-                        <h3 class="text-[32px] leading-tight text-center text-white">
+                        class="z-10 flex flex-col items-center justify-center w-full pb-6 md:pb-8 transition-all duration-500 translate-y-0 opacity-100 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
+                        <h3 class="text-2xl md:text-[32px] leading-tight text-center text-white">
                             <span class="font-light">Satisfaction</span><br>
                             <span class="font-bold">Garantie</span>
                         </h3>

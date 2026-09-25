@@ -12,7 +12,7 @@
                 Discutons-en
             </h2>
 
-            <a href="#contact" class="mt-8 inline-flex items-center justify-center rounded-xl bg-[#f5771d] px-7 py-4 text-md font-bold text-white shadow-[0_18px_30px_rgba(245,119,29,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e06917] focus:outline-none focus:ring-4 focus:ring-[#f5771d]/30 sm:px-10 sm:py-5 sm:text-2xl lg:px-14 lg:py-5 lg:text-lg">
+            <a href="#contact" class="mt-8 inline-flex items-center justify-center rounded-xl bg-[#F5791F] px-7 py-4 text-md font-bold text-white shadow-[0_18px_30px_rgba(245,119,29,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e06917] focus:outline-none focus:ring-4 focus:ring-[#F5791F]/30 sm:px-10 sm:py-5 sm:text-2xl lg:px-14 lg:py-5 lg:text-lg">
                 Prendre rendez-vous
             </a>
         </div>

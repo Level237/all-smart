@@ -2,7 +2,7 @@
 
     <!-- Conteneur pour le Titre (Centré et contraint en largeur) -->
     <div class="px-4 mx-auto mb-10 max-w-7xl text-center">
-        <h2 class="font-zeyada text-5xl sm:text-6xl md:text-7xl text-[#f5771d]">
+        <h2 class="font-zeyada text-5xl sm:text-6xl md:text-7xl text-[#F5791F]">
             Un coup d'oeil
         </h2>
         <h3 class="text-2xl font-bold mt-[-25px] tracking-tight text-gray-900 sm:text-3xl md:text-4xl">
@@ -85,7 +85,7 @@
         <!-- Flèches de navigation positionnées sur les bords extrêmes -->
         <!-- Flèche gauche -->
         <button @click="prev()"
-            class="absolute top-1/2 -translate-y-1/2 left-4 md:left-8 lg:left-12 bg-white text-gray-800 hover:text-[#f5771d] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none transition-all duration-300 z-40 hover:scale-105"
+            class="absolute top-1/2 -translate-y-1/2 left-4 md:left-8 lg:left-12 bg-white text-gray-800 hover:text-[#F5791F] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none transition-all duration-300 z-40 hover:scale-105"
             aria-label="Succès précédent">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                 stroke="currentColor" class="w-6 h-6 md:w-8 md:h-8">
@@ -95,7 +95,7 @@
 
         <!-- Flèche droite -->
         <button @click="next()"
-            class="absolute top-1/2 -translate-y-1/2 right-4 md:right-8 lg:right-12 bg-white text-gray-800 hover:text-[#f5771d] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none transition-all duration-300 z-40 hover:scale-105"
+            class="absolute top-1/2 -translate-y-1/2 right-4 md:right-8 lg:right-12 bg-white text-gray-800 hover:text-[#F5791F] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl focus:outline-none transition-all duration-300 z-40 hover:scale-105"
             aria-label="Succès suivant">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                 stroke="currentColor" class="w-6 h-6 md:w-8 md:h-8">
@@ -107,7 +107,7 @@
     <!-- Conteneur pour le Bouton CTA (Centré et contraint en largeur) -->
     <div class="px-4 mx-auto mt-12 max-w-7xl text-center">
         <a href="#portfolio"
-            class="inline-block bg-[#f5771d] hover:bg-[#e06917] text-white font-bold text-base md:text-lg px-8 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:ring-4 focus:ring-[#f5771d]/50">
+            class="inline-block bg-[#F5791F] hover:bg-[#e06917] text-white font-bold text-base md:text-lg px-8 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:ring-4 focus:ring-[#F5791F]/50">
             Découvrir toutes nos réalisations
         </a>
     </div>

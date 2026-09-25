@@ -3,9 +3,9 @@
 ⚠️ À personnaliser avant de démarrer.
 
 ## Le projet
-- Nom du projet : [______]
-- Activité / à propos : [______]
-- Stack : Laravel [version], PHP [version], SQLite (ou MySQL)
+- Nom du projet : AllSmart
+- Activité / à propos : Agence de communication, marketing d'influence, création de contenus et solutions digitales.
+- Stack : Laravel 13, PHP 8.3, SQLite / MySQL, Blade, Tailwind CSS / Vanilla CSS.
 
 ## Conventions
 - Les vues restent simples (Blade), pas de logique métier dans les vues.

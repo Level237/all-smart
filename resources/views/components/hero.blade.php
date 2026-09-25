@@ -22,7 +22,7 @@
                 Découvrir nos services
             </a>
             <a href="#rendez-vous"
-                class="w-full sm:w-auto px-8 py-3.5 text-sm font-bold text-white transition-all duration-300 bg-[#f5771d] rounded-md shadow-lg hover:bg-[#de6916] hover:-translate-y-0.5 focus:ring-4 focus:ring-[#f5771d]/50">
+                class="w-full sm:w-auto px-8 py-3.5 text-sm font-bold text-white transition-all duration-300 bg-[#F5791F] rounded-md shadow-lg hover:bg-[#de6916] hover:-translate-y-0.5 focus:ring-4 focus:ring-[#F5791F]/50">
                 Prendre rendez-vous
             </a>
         </div>
@@ -30,7 +30,7 @@
 
     <!-- Navigation du slider (Statique pour le moment) -->
     <div class="absolute flex items-center justify-center space-x-2 bottom-8">
-        <button class="w-3 h-3 transition-colors duration-300 rounded-full bg-[#f5771d] shadow-sm hover:bg-[#de6916]"
+        <button class="w-3 h-3 transition-colors duration-300 rounded-full bg-[#F5791F] shadow-sm hover:bg-[#de6916]"
             aria-label="Slide 1"></button>
         <button class="w-6 h-1.5 transition-colors duration-300 rounded-full bg-white/60 hover:bg-white shadow-sm"
             aria-label="Slide 2"></button>

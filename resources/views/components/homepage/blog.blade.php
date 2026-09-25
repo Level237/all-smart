@@ -3,7 +3,7 @@
         
         <!-- Header -->
         <div class="mb-12 text-center">
-            <p class="font-['Zeyada'] text-3xl sm:text-4xl md:text-5xl text-[#f5771d] mb-2">
+            <p class="font-['Zeyada'] text-3xl sm:text-4xl md:text-5xl text-[#F5791F] mb-2">
                 Notre section d'astuces et d'information
             </p>
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
@@ -24,14 +24,14 @@
                              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                         
                         <!-- Badge -->
-                        <div class="absolute top-4 left-4 bg-[#f5771d] text-white px-4 py-2 rounded-lg font-semibold text-sm uppercase tracking-wide shadow-lg">
+                        <div class="absolute top-4 left-4 bg-[#F5791F] text-white px-4 py-2 rounded-lg font-semibold text-sm uppercase tracking-wide shadow-lg">
                             A la une
                         </div>
                     </div>
 
                     <!-- Content -->
                     <div class="p-6 sm:p-8">
-                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-[#f5771d] transition-colors">
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-[#F5791F] transition-colors">
                             Comment le rebranding de MTN change le game?
                         </h3>
                         <p class="text-gray-600 text-sm sm:text-base mb-6 line-clamp-3">
@@ -55,7 +55,7 @@
                                     15
                                 </span>
                             </div>
-                            <a href="#" class="text-[#f5771d] font-semibold hover:text-[#d96616] transition-colors flex items-center gap-1">
+                            <a href="#" class="text-[#F5791F] font-semibold hover:text-[#d96616] transition-colors flex items-center gap-1">
                                 lire la suite
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -77,9 +77,9 @@
                              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="sm:w-3/5 p-6 sm:p-8 flex flex-col justify-center">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-[#f5771d] transition-colors">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-[#F5791F] transition-colors">
                             Le Marketing d'influence pour les nuls<br>
-                            <span class="text-[#f5771d]">Ep.01:</span> Pourquoi le Marketing d'influence?
+                            <span class="text-[#F5791F]">Ep.01:</span> Pourquoi le Marketing d'influence?
                         </h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
@@ -100,7 +100,7 @@
                                     15
                                 </span>
                             </div>
-                            <a href="#" class="text-[#f5771d] font-semibold hover:text-[#d96616] transition-colors">
+                            <a href="#" class="text-[#F5791F] font-semibold hover:text-[#d96616] transition-colors">
                                 lire la suite
                             </a>
                         </div>
@@ -115,9 +115,9 @@
                              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="sm:w-3/5 p-6 sm:p-8 flex flex-col justify-center">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-[#f5771d] transition-colors">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-[#F5791F] transition-colors">
                             Le Marketing d'influence pour les nuls<br>
-                            <span class="text-[#f5771d]">Ep.01:</span> Pourquoi le Marketing d'influence?
+                            <span class="text-[#F5791F]">Ep.01:</span> Pourquoi le Marketing d'influence?
                         </h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
@@ -138,7 +138,7 @@
                                     15
                                 </span>
                             </div>
-                            <a href="#" class="text-[#f5771d] font-semibold hover:text-[#d96616] transition-colors">
+                            <a href="#" class="text-[#F5791F] font-semibold hover:text-[#d96616] transition-colors">
                                 lire la suite
                             </a>
                         </div>
@@ -150,7 +150,7 @@
 
         <!-- CTA Button -->
         <div class="text-center">
-            <a href="#" class="inline-flex items-center gap-2 bg-[#f5771d] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-[#e06917] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <a href="#" class="inline-flex items-center gap-2 bg-[#F5791F] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-[#e06917] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 Voir tous les articles
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

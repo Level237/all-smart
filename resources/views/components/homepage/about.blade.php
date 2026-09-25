@@ -1,7 +1,7 @@
 <section id="qui-sommes-nous" class="px-6 py-20 bg-white md:py-28 lg:py-32">
     <div class="max-w-4xl mx-auto text-center">
         <!-- Titre avec la police manuscrite -->
-        <h2 class="mb-8 text-5xl font-semibold text-[#f5771d] sm:text-6xl md:text-7xl font-zeyada">
+        <h2 class="mb-8 text-5xl font-semibold text-[#F5791F] sm:text-6xl md:text-7xl font-zeyada">
             Nous sommes AllSmart
         </h2>
         

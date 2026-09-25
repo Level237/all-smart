@@ -2,14 +2,14 @@
     
     <!-- Ligne décorative supérieure -->
     <div class="flex justify-center mb-8">
-        <div class="w-full max-w-4xl h-[1px] bg-[#f5771d]/40"></div>
+        <div class="w-full max-w-4xl h-[1px] bg-[#F5791F]/40"></div>
     </div>
 
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         
         <!-- En-tête de section -->
         <div class="mb-16 text-center">
-            <h2 class="font-zeyada text-5xl sm:text-6xl md:text-7xl text-[#f5771d] relative z-10">
+            <h2 class="font-zeyada text-5xl sm:text-6xl md:text-7xl text-[#F5791F] relative z-10">
                 En nous, ils ont confiance
             </h2>
             <h3 class="text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl mt-[-20px] relative z-20">
