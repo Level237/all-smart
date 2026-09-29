@@ -33,6 +33,10 @@
             font-weight: 400;
             font-style: normal;
         }
+
+        [x-cloak] {
+            display: none !important;
+        }
     </style>
 </head>
 <body class="text-gray-900 bg-white">

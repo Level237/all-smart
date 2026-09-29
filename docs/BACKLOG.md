@@ -17,7 +17,7 @@ Ce fichier recense l'ensemble des tâches et fonctionnalités ordonnées.
 - [x] **B-02** : Application des ajustements design de Louis sur la page "Qui Sommes-Nous" (`AboutUs.blade.php`, frame `#48:40`).
 - [x] **B-03** : Alignement design et composants des 7 pages Services (`Services.blade.php`, `ServicesPage.blade.php` & configs).
 - [x] **B-04** : Intégration des pages Packs restantes : Pack Croissance (frame `#316:118`) et Pack Image Premium (`#316:191`).
-- [ ] **B-05** : Intégration de l'interface "Liste des Influenceurs partenaires" avec filtres catégories/plateformes (frames Figma `#321:432` et `#327:599`).
+- [x] **B-05** : Intégration de l'interface "Liste des Influenceurs partenaires" avec filtres catégories/plateformes (frames Figma `#321:432` et `#327:599`) + Boîte Modale Profil Influenceur ("Option A - Studio Unifié" interactive avec tags, bio, 3 KPI et CTA contact).
 - [ ] **B-06** : Formulaire public de prise de rendez-vous & contact (champs : nom, email, téléphone, service concerné, date/créneau souhaité, message).
 - [ ] **B-07** : Validation responsive mobile (375px) sur toutes les vues publiques.
 

@@ -41,7 +41,7 @@
             <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 
                 <!-- Bouton 1 : Voir nos influenceurs -->
-                <a href="#influenceurs" 
+                <a href="/influenceurs" 
                    class="inline-flex items-center justify-center gap-3.5 rounded-xl bg-[#F5791F] px-6 py-4 text-base font-bold text-white shadow-[0_12px_24px_rgba(245,121,31,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d6630f] focus:outline-none focus:ring-4 focus:ring-[#F5791F]/30 sm:text-lg">
                     <!-- Icone User Circle -->
                     <svg class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -159,7 +159,7 @@
 
             <!-- Bouton CTA final -->
             <div class="mt-12 flex justify-center">
-                <a href="#influenceurs" 
+                <a href="/influenceurs" 
                    class="inline-flex items-center justify-center rounded-xl bg-[#F5791F] px-8 py-3.5 text-base sm:text-lg font-bold text-white shadow-[0_10px_25px_rgba(245,121,31,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d6630f] focus:outline-none focus:ring-4 focus:ring-[#F5791F]/30">
                     Voir tous nos influenceurs
                 </a>

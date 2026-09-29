@@ -105,3 +105,5 @@ Route::view('/services/activations-evenementiel', 'Services', [
 
 Route::view('/services/marketing-d-influence', 'MarketingInfluence');
 
+Route::view('/influenceurs', 'Influenceurs');
+Route::redirect('/services/marketing-d-influence/influenceurs', '/influenceurs');
