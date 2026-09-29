@@ -24,7 +24,7 @@ return [
         ['name' => 'Activations & Événementiel', 'active' => false, 'url' => '/services/activations-evenementiel'],
         ['name' => 'Marketing d\'Influence', 'active' => false, 'url' => '/services/marketing-d-influence'],
     ],
-    'titleClass' => 'text-[#f5771d]',
+    'titleClass' => 'text-[#F5791F]',
     'heroImage' => 'assets/services/slide-service.jpg',
     'gallery' => [
         'top' => 'assets/services/branding1.jpg',
@@ -41,6 +41,6 @@ return [
         'title' => 'Developpons ensemble',
         'subtitle' => 'votre influence',
         'button' => 'Réserver une consultation',
-        'buttonClass' => 'bg-[#f5771d] hover:bg-[#e06917] shadow-[0_18px_30px_rgba(245,119,29,0.42)]',
+        'buttonClass' => 'bg-[#F5791F] hover:bg-[#d6630f] shadow-[0_18px_30px_rgba(245,121,31,0.42)]',
     ],
 ];

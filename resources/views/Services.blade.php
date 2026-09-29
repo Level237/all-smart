@@ -27,7 +27,7 @@
                 ['name' => 'Activations & Événementiel', 'active' => false, 'url' => '#activations'],
                 ['name' => 'Marketing d\'Influence', 'active' => false, 'url' => '#influence'],
             ],
-            'titleClass' => 'text-[#f5771d]',
+            'titleClass' => 'text-[#F5791F]',
             'heroImage' => 'assets/services/slide-service.jpg',
             'gallery' => [
                 'top' => 'assets/services/strategie1.jpg',
@@ -44,7 +44,7 @@
                 'title' => 'Construisons',
                 'subtitle' => 'votre stratégie',
                 'button' => 'Planifions un audit stratégique',
-                'buttonClass' => 'bg-[#f5771d] hover:bg-[#e06917] shadow-[0_18px_30px_rgba(245,119,29,0.42)]',
+                'buttonClass' => 'bg-[#F5791F] hover:bg-[#d6630f] shadow-[0_18px_30px_rgba(245,121,31,0.42)]',
             ],
         ];
 
@@ -89,7 +89,7 @@
                         <ul class="mt-4 space-y-3 sm:space-y-4">
                             @foreach($service['items'] as $item)
                                 <li class="flex items-start gap-3 text-[0.92rem] leading-7 text-gray-700 sm:text-[1rem] md:text-[1.08rem]">
-                                    <span class="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-[#f5771d]"></span>
+                                    <span class="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-[#F5791F]"></span>
                                     <span>{{ $item }}</span>
                                 </li>
                             @endforeach
@@ -98,7 +98,7 @@
 
                     <!-- Galerie d'images -->
                     <div class="mt-24 space-y-4">
-                        <div class="relative h-[100px] w-full overflow-hidden rounded-[18px] border border-[#dfe8ee] bg-gray-200 sm:h-[250px] lg:h-[250px]">
+                        <div class="relative h-[180px] w-full overflow-hidden rounded-[18px] border border-[#dfe8ee] bg-gray-200 sm:h-[250px] lg:h-[250px]">
                             <img src="{{ asset($service['gallery']['top']) }}"
                                  alt="{{ $service['title'] }} - vue 1"
                                  class="h-full w-full object-cover">
@@ -106,7 +106,7 @@
 
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             @foreach($service['gallery']['bottom'] as $image)
-                                <div class="relative h-[150px] overflow-hidden rounded-[18px] border border-[#dfe8ee] bg-gray-200 sm:h-[280px] lg:h-[290px]">
+                                <div class="relative h-[180px] overflow-hidden rounded-[18px] border border-[#dfe8ee] bg-gray-200 sm:h-[280px] lg:h-[290px]">
                                     <img src="{{ asset($image) }}"
                                          alt="{{ $service['title'] }} - vue secondaire"
                                          class="h-full w-full object-cover">
@@ -129,13 +129,13 @@
 
                 <!-- Right: Side Menu (Sticky) -->
                 <aside class="relative lg:sticky lg:top-44 lg:self-start">
-                    <div class="overflow-hidden rounded-[32px] bg-[#f5771d] shadow-[0_20px_50px_rgba(245,119,29,0.25)]">
+                    <div class="overflow-hidden rounded-[32px] bg-[#F5791F] shadow-[0_20px_50px_rgba(245,121,31,0.25)]">
                         <div class="p-4 sm:p-6 md:p-7 lg:p-8">
-                            <div class="space-y-6">
+                            <div class="space-y-4 sm:space-y-5">
                                 @foreach($service['sideItems'] as $index => $item)
-                                    <div class="{{ $item['active'] ? 'bg-[#f4b896]   px-3 py-2 sm:px-4 sm:py-3' : 'border-b mb-4  border-white/30 ' }}">
+                                    <div class="{{ $item['active'] ? 'bg-white rounded-[16px] shadow-sm px-4 py-2.5 sm:px-5 sm:py-3' : 'border-b mb-3 border-white/25 pb-2.5' }}">
                                         <a href="{{ $item['url'] }}" 
-                                           class="block  py-1.5 text-[1rem] font-bold leading-snug tracking-[-0.01em] {{ $item['active'] ? 'text-gray-900' : 'text-white' }} transition-all duration-300 hover:opacity-85 sm:text-[1.15rem] lg:text-[1.35rem]">
+                                           class="block text-[1rem] font-bold leading-snug tracking-[-0.01em] {{ $item['active'] ? 'text-[#F5791F]' : 'text-white hover:text-white/80' }} transition-all duration-300 sm:text-[1.15rem] lg:text-[1.3rem]">
                                             {{ $item['name'] }}
                                         </a>
                                     </div>
@@ -260,7 +260,7 @@
                     </p>
 
                     <div class="mt-8 flex justify-center">
-                        <a href="#contact" class="inline-flex items-center justify-center rounded-xl {{ $service['cta']['buttonClass'] }} px-9 py-4 text-xl font-bold text-white transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[#f5771d]/30 sm:px-12 sm:py-5 sm:text-2xl lg:px-16 lg:py-5 lg:text-2xl">
+                        <a href="#contact" class="inline-flex items-center justify-center rounded-xl {{ $service['cta']['buttonClass'] }} px-9 py-4 text-xl font-bold text-white transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[#F5791F]/30 sm:px-12 sm:py-5 sm:text-2xl lg:px-16 lg:py-5 lg:text-2xl">
                             {{ $service['cta']['button'] }}
                         </a>
                     </div>

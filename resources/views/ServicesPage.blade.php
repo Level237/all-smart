@@ -12,20 +12,20 @@
 
         <div class="relative z-10 container mx-auto flex h-full max-w-7xl flex-col justify-center px-6 md:px-10">
             <div class="max-w-3xl space-y-4">
-                <div class="inline-block rounded-full bg-[#f5771d] px-4 py-1 text-sm font-bold text-white animate-fade-in">
+                <div class="inline-block rounded-full bg-[#F5791F] px-4 py-1 text-sm font-bold text-white animate-fade-in">
                     Nos services
                 </div>
                 <h1 class="text-4xl font-black leading-tight text-white max-sm:text-3xl md:text-6xl animate-slide-in-left">
                     Transformons votre présence
                 </h1>
-                <div class="h-1 w-20 bg-[#f5771d] animate-width-grow"></div>
+                <div class="h-1 w-20 bg-[#F5791F] animate-width-grow"></div>
             </div>
         </div>
 
         <div class="absolute bottom-8 left-0 z-10 w-full">
             <div class="container mx-auto max-w-7xl px-6 md:px-10">
                 <nav class="flex space-x-2 text-sm font-medium text-white/60">
-                    <a href="/" class="transition-colors hover:text-[#f5771d] max-sm:text-xs">Accueil</a>
+                    <a href="/" class="transition-colors hover:text-[#F5791F] max-sm:text-xs">Accueil</a>
                     <span>/</span>
                     <span class="text-white max-sm:text-xs">Nos Services</span>
                 </nav>
@@ -108,7 +108,7 @@
                                 {{ $service['description'] }}
                             </p>
 
-                            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#f5771d] sm:text-base">
+                            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#F5791F] sm:text-base">
                                 En savoir plus
                                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>

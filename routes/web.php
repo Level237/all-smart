@@ -56,8 +56,23 @@ Route::get('/services', function () {
 });
 
 Route::view('/qui-sommes-nous', 'AboutUs');
-Route::view('/pack/visibilite', 'PackVisibilite');
-Route::view('/packs/visibilite', 'PackVisibilite');
+
+Route::redirect('/packs', '/packs/visibilite');
+
+Route::view('/packs/visibilite', 'Pack', [
+    'pack' => require __DIR__ . '/../config/packs/visibilite.php',
+]);
+Route::redirect('/pack/visibilite', '/packs/visibilite');
+
+Route::view('/packs/croissance', 'Pack', [
+    'pack' => require __DIR__ . '/../config/packs/croissance.php',
+]);
+Route::redirect('/pack/croissance', '/packs/croissance');
+
+Route::view('/packs/image-premium', 'Pack', [
+    'pack' => require __DIR__ . '/../config/packs/image-premium.php',
+]);
+Route::redirect('/pack/image-premium', '/packs/image-premium');
 
 Route::view('/services/strategie-et-conseil', 'Services', [
     'service' => require __DIR__ . '/../config/services/strategie-conseil.php',

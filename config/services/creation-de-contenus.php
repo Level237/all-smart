@@ -23,7 +23,7 @@ return [
         ['name' => 'Activations & Événementiel', 'active' => false, 'url' => '/services/activations-evenementiel'],
         ['name' => 'Marketing d\'Influence', 'active' => false, 'url' => '/services/marketing-d-influence'],
     ],
-    'titleClass' => 'text-[#f5771d]',
+    'titleClass' => 'text-[#F5791F]',
     'heroImage' => 'assets/services/slide-service.jpg',
     'gallery' => [
         'top' => 'assets/services/contenu1.jpg',
