@@ -107,3 +107,21 @@ Route::view('/services/marketing-d-influence', 'MarketingInfluence');
 
 Route::view('/influenceurs', 'Influenceurs');
 Route::redirect('/services/marketing-d-influence/influenceurs', '/influenceurs');
+
+Route::view('/createur-de-contenu', 'CreateurContenu');
+Route::redirect('/services/marketing-d-influence/createur-de-contenu', '/createur-de-contenu');
+Route::redirect('/je-suis-createur-de-contenu', '/createur-de-contenu');
+
+Route::view('/rejoindre-le-reseau', 'RejoindreReseau');
+Route::redirect('/services/marketing-d-influence/rejoindre', '/rejoindre-le-reseau');
+Route::redirect('/rejoindre-reseau', '/rejoindre-le-reseau');
+
+Route::view('/contact', 'Contact');
+Route::redirect('/nous-contacter', '/contact');
+
+Route::view('/rendez-vous', 'RendezVous');
+Route::redirect('/prendre-rendez-vous', '/rendez-vous');
+Route::redirect('/rendezvous', '/rendez-vous');
+
+
+

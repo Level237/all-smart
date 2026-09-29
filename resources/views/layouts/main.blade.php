@@ -39,7 +39,7 @@
         }
     </style>
 </head>
-<body class="text-gray-900 bg-white">
+<body class="text-gray-900 bg-white overflow-x-hidden">
     
     <!-- Header Global -->
     @if(View::exists('components.header'))

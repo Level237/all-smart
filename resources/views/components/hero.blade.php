@@ -17,11 +17,11 @@
 
         <!-- Boutons d'action -->
         <div class="flex flex-col items-center justify-center w-full gap-4 sm:flex-row sm:w-auto">
-            <a href="#services"
+            <a href="/services"
                 class="w-full sm:w-auto px-8 py-3.5 text-sm font-bold text-gray-900 transition-all duration-300 bg-white rounded-md shadow-lg hover:bg-gray-100 hover:-translate-y-0.5 focus:ring-4 focus:ring-white/50">
                 Découvrir nos services
             </a>
-            <a href="#rendez-vous"
+            <a href="/rendez-vous"
                 class="w-full sm:w-auto px-8 py-3.5 text-sm font-bold text-white transition-all duration-300 bg-[#F5791F] rounded-md shadow-lg hover:bg-[#de6916] hover:-translate-y-0.5 focus:ring-4 focus:ring-[#F5791F]/50">
                 Prendre rendez-vous
             </a>

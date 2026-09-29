@@ -111,7 +111,7 @@
 
             <!-- Bouton CTA -->
             <div class="mt-8 flex justify-center">
-                <a href="#contact" class="inline-flex items-center justify-center rounded-xl bg-[#F5791F] px-8 py-4 text-base font-bold text-white shadow-[0_14px_28px_rgba(245,121,31,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d6630f] focus:outline-none focus:ring-4 focus:ring-[#F5791F]/30 sm:px-12 sm:py-5 sm:text-lg md:px-14 md:text-xl">
+                <a href="/rendez-vous" class="inline-flex items-center justify-center rounded-xl bg-[#F5791F] px-8 py-4 text-base font-bold text-white shadow-[0_14px_28px_rgba(245,121,31,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d6630f] focus:outline-none focus:ring-4 focus:ring-[#F5791F]/30 sm:px-12 sm:py-5 sm:text-lg md:px-14 md:text-xl">
                     {{ $pack['cta']['button'] }}
                 </a>
             </div>

@@ -53,7 +53,7 @@
                 </a>
 
                 <!-- Bouton 2 : Je suis créateur de contenus -->
-                <a href="#contact" 
+                <a href="/createur-de-contenu" 
                    class="inline-flex items-center justify-center gap-3.5 rounded-xl bg-[#3D6B7A] px-6 py-4 text-base font-bold text-white shadow-[0_12px_24px_rgba(61,107,122,0.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#325865] focus:outline-none focus:ring-4 focus:ring-[#3D6B7A]/30 sm:text-lg">
                     <!-- Icone User Plus -->
                     <svg class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -275,7 +275,7 @@
                     </p>
 
                     <div class="mt-8 sm:mt-10">
-                        <a href="#contact" 
+                        <a href="/rendez-vous" 
                            class="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-base sm:text-lg font-bold text-[#F5791F] shadow-lg transition-all duration-300 hover:bg-white/95 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-white/40">
                             Créer votre campagne d’influence
                         </a>

@@ -166,7 +166,7 @@
                     </div>
 
                     <div class="mt-7 flex justify-center">
-                        <a href="#contact" class="inline-flex items-center justify-center rounded-[18px] bg-[#4a8ca1] px-7 py-4 text-lg font-bold text-white shadow-[0_16px_28px_rgba(70,123,136,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3e7d8d] focus:outline-none focus:ring-4 focus:ring-[#4a8ca1]/30 sm:px-10 sm:py-5 sm:text-[1.8rem] lg:px-14 lg:py-5">
+                        <a href="/rendez-vous" class="inline-flex items-center justify-center rounded-[18px] bg-[#4a8ca1] px-7 py-4 text-lg font-bold text-white shadow-[0_16px_28px_rgba(70,123,136,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#3e7d8d] focus:outline-none focus:ring-4 focus:ring-[#4a8ca1]/30 sm:px-10 sm:py-5 sm:text-[1.8rem] lg:px-14 lg:py-5">
                             {{ $service['cta']['button'] }}
                         </a>
                     </div>
@@ -189,7 +189,7 @@
                     </p>
 
                     <div class="mt-8 flex justify-center">
-                        <a href="#contact" class="inline-flex items-center justify-center rounded-[18px] bg-[#5d9daf] px-8 py-4 text-xl font-bold text-white shadow-[0_16px_28px_rgba(70,123,136,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4e8ca0] focus:outline-none focus:ring-4 focus:ring-[#5d9daf]/30 sm:px-12 sm:py-5 sm:text-[2rem] lg:px-16 lg:py-5 lg:text-[1.5rem]">
+                        <a href="/rendez-vous" class="inline-flex items-center justify-center rounded-[18px] bg-[#5d9daf] px-8 py-4 text-xl font-bold text-white shadow-[0_16px_28px_rgba(70,123,136,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4e8ca0] focus:outline-none focus:ring-4 focus:ring-[#5d9daf]/30 sm:px-12 sm:py-5 sm:text-[2rem] lg:px-16 lg:py-5 lg:text-[1.5rem]">
                             {{ $service['cta']['button'] }}
                         </a>
                     </div>
@@ -213,7 +213,7 @@
                     </p>
 
                     <div class="mt-8 flex justify-center">
-                        <a href="#contact" class="inline-flex items-center justify-center rounded-[18px] bg-[#3D6B7A] px-8 py-4 text-xl font-bold text-white  transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4e8ca0] focus:outline-none focus:ring-4 focus:ring-[#5d9daf]/30 sm:px-12 sm:py-5 sm:text-[2rem] lg:px-16 lg:py-5 lg:text-[1.5rem]">
+                        <a href="/rendez-vous" class="inline-flex items-center justify-center rounded-[18px] bg-[#3D6B7A] px-8 py-4 text-xl font-bold text-white  transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4e8ca0] focus:outline-none focus:ring-4 focus:ring-[#5d9daf]/30 sm:px-12 sm:py-5 sm:text-[2rem] lg:px-16 lg:py-5 lg:text-[1.5rem]">
                             {{ $service['cta']['button'] }}
                         </a>
                     </div>
@@ -237,7 +237,7 @@
                     </p>
 
                     <div class="mt-8 flex justify-center">
-                        <a href="#contact" class="inline-flex items-center justify-center rounded-[18px] bg-[#3D6B7A] px-8 py-4 text-xl font-bold text-white  transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4e8ca0] focus:outline-none focus:ring-4 focus:ring-[#5d9daf]/30 sm:px-12 sm:py-5 sm:text-[2rem] lg:px-16 lg:py-5 lg:text-[1.5rem]">
+                        <a href="/rendez-vous" class="inline-flex items-center justify-center rounded-[18px] bg-[#3D6B7A] px-8 py-4 text-xl font-bold text-white  transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4e8ca0] focus:outline-none focus:ring-4 focus:ring-[#5d9daf]/30 sm:px-12 sm:py-5 sm:text-[2rem] lg:px-16 lg:py-5 lg:text-[1.5rem]">
                             {{ $service['cta']['button'] }}
                         </a>
                     </div>
@@ -260,7 +260,7 @@
                     </p>
 
                     <div class="mt-8 flex justify-center">
-                        <a href="#contact" class="inline-flex items-center justify-center rounded-xl {{ $service['cta']['buttonClass'] }} px-9 py-4 text-xl font-bold text-white transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[#F5791F]/30 sm:px-12 sm:py-5 sm:text-2xl lg:px-16 lg:py-5 lg:text-2xl">
+                        <a href="/rendez-vous" class="inline-flex items-center justify-center rounded-xl {{ $service['cta']['buttonClass'] }} px-9 py-4 text-xl font-bold text-white transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-[#F5791F]/30 sm:px-12 sm:py-5 sm:text-2xl lg:px-16 lg:py-5 lg:text-2xl">
                             {{ $service['cta']['button'] }}
                         </a>
                     </div>

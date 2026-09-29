@@ -28,7 +28,7 @@
 
             <!-- Liens de navigation (Desktop) -->
             <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
-                <a href="#qui-sommes-nous"
+                <a href="/qui-sommes-nous"
                     class="text-sm xl:text-base font-bold text-gray-900 transition-colors hover:text-[#F5791F]">Qui
                     sommes-nous ?</a>
 
@@ -53,23 +53,19 @@
                     </div>
                 </div>
 
-                <div class="relative group">
-                    <button
-                        class="flex items-center text-sm xl:text-base font-bold text-gray-900 transition-colors hover:text-[#F5791F] focus:outline-none">
-                        Réalisations
-                        <svg class="w-3.5 h-3.5 ml-1.5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M9 18l6-6-6-6v12z" />
-                        </svg>
-                    </button>
-                </div>
+                <a href="/#succes"
+                    class="text-sm xl:text-base font-bold text-gray-900 transition-colors hover:text-[#F5791F]">Réalisations</a>
 
-                <a href="#blog"
+                <a href="/#blog"
                     class="text-sm xl:text-base font-bold text-gray-900 transition-colors hover:text-[#F5791F]">Blog</a>
+
+                <a href="/contact"
+                    class="text-sm xl:text-base font-bold text-gray-900 transition-colors hover:text-[#F5791F]">Contact</a>
             </div>
 
             <!-- Call to Action & Langue (Desktop) -->
             <div class="hidden lg:flex items-center space-x-4 xl:space-x-6">
-                <a href="#rendez-vous"
+                <a href="/rendez-vous"
                     class="px-5 xl:px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 bg-[#F5791F] rounded-md hover:bg-[#de6916] shadow-md hover:-translate-y-0.5 focus:ring-4 focus:ring-[#F5791F]/50">
                     Prendre rendez-vous
                 </a>
@@ -137,7 +133,7 @@
             <!-- Liens de navigation -->
             <div class="flex flex-col space-y-6">
                 <div class="flex flex-col space-y-2">
-                    <a href="#qui-sommes-nous"
+                    <a href="/qui-sommes-nous"
                         class="block px-4 py-3 text-lg font-bold text-gray-900 transition-all rounded-xl hover:bg-white/50 hover:text-[#F5791F] hover:translate-x-2">Qui
                         sommes-nous ?</a>
 
@@ -153,17 +149,19 @@
                         </div>
                     </div>
 
-                    <a href="#realisations"
+                    <a href="/#succes"
                         class="block px-4 py-3 text-lg font-bold text-gray-900 transition-all rounded-xl hover:bg-white/50 hover:text-[#F5791F] hover:translate-x-2">Réalisations</a>
-                    <a href="#blog"
+                    <a href="/#blog"
                         class="block px-4 py-3 text-lg font-bold text-gray-900 transition-all rounded-xl hover:bg-white/50 hover:text-[#F5791F] hover:translate-x-2">Blog</a>
+                    <a href="/contact"
+                        class="block px-4 py-3 text-lg font-bold text-gray-900 transition-all rounded-xl hover:bg-white/50 hover:text-[#F5791F] hover:translate-x-2">Contact</a>
                 </div>
 
                 <hr class="border-gray-300/60">
 
                 <!-- Call-to-Action & Langue -->
                 <div class="flex flex-col gap-6 pt-4">
-                    <a href="#rendez-vous"
+                    <a href="/rendez-vous"
                         class="flex items-center justify-center w-full px-6 py-4 text-base font-bold text-white transition-all duration-300 bg-[#F5791F] rounded-xl shadow-lg hover:bg-[#de6916] hover:-translate-y-1">
                         Prendre rendez-vous
                     </a>

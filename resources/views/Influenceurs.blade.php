@@ -681,7 +681,7 @@
                     </p>
 
                     <div class="mt-8">
-                        <a href="#contact" 
+                        <a href="/rendez-vous" 
                            class="inline-flex items-center justify-center rounded-xl bg-white px-7 py-3.5 text-base font-bold text-[#F5791F] shadow-md transition-all duration-300 hover:bg-white/95 hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-white/40">
                             Créer votre campagne d’influence
                         </a>
@@ -706,7 +706,7 @@
             </h2>
 
             <div class="mt-8">
-                <a href="#contact" 
+                <a href="/rendez-vous" 
                    class="inline-flex items-center justify-center rounded-xl bg-[#F5791F] px-10 py-4 text-lg font-bold text-white shadow-[0_14px_28px_rgba(245,121,31,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d6630f] focus:outline-none focus:ring-4 focus:ring-[#F5791F]/30 sm:px-12 sm:text-xl">
                     Prendre rendez-vous
                 </a>

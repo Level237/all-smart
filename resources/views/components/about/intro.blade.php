@@ -132,7 +132,7 @@
     </div>
 
     <!-- Container bleu centré en bas, plus étroit que le parent -->
-    <div class="mb-[-80px] lg:mb-[-110px] mt-12 mx-auto w-[92%] sm:w-[85%] max-w-4xl overflow-hidden rounded-[24px] bg-[#3f8fa2] px-6 py-10 sm:px-10 lg:px-12">
+    <div class="relative z-10 mb-[-80px] lg:mb-[-110px] mt-12 mx-auto w-[92%] sm:w-[85%] max-w-4xl overflow-hidden rounded-[24px] bg-[#3f8fa2] px-6 py-10 sm:px-10 lg:px-12">
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 justify-items-center">
             @foreach(['01', '02', '03', '04', '05'] as $value)
                 <div class="flex flex-col items-center justify-center text-center text-white">

@@ -64,7 +64,7 @@
                     </li>
                     
                     <li>
-                        <a href="#contact" class="text-base text-gray-300 transition-all duration-300 hover:text-[#F5791F] hover:translate-x-1 inline-block">
+                        <a href="/contact" class="text-base text-gray-300 transition-all duration-300 hover:text-[#F5791F] hover:translate-x-1 inline-block">
                              Contact
                         </a>
                     </li>
@@ -96,7 +96,7 @@
                     </p>
                     
                     <div class="pt-2">
-                        <a href="#contact" class="inline-block bg-white px-8 py-3.5 text-base font-bold text-gray-900 shadow-md transition-all duration-300 hover:bg-gray-100 hover:shadow-lg">
+                        <a href="/contact" class="inline-block bg-white px-8 py-3.5 text-base font-bold text-gray-900 shadow-md transition-all duration-300 hover:bg-gray-100 hover:shadow-lg">
                             Nous contacter
                         </a>
                     </div>
