@@ -103,6 +103,5 @@ Route::view('/services/activations-evenementiel', 'Services', [
     'service' => require __DIR__ . '/../config/services/activations-evenementiel.php',
 ]);
 
-Route::view('/services/marketing-d-influence', 'Services', [
-    'service' => require __DIR__ . '/../config/services/marketing-influence.php',
-]);
+Route::view('/services/marketing-d-influence', 'MarketingInfluence');
+
