@@ -74,6 +74,11 @@ Route::view('/packs/image-premium', 'Pack', [
 ]);
 Route::redirect('/pack/image-premium', '/packs/image-premium');
 
+Route::view('/packs/activation-360', 'Pack', [
+    'pack' => require __DIR__ . '/../config/packs/activation-360.php',
+]);
+Route::redirect('/pack/activation-360', '/packs/activation-360');
+
 Route::view('/services/strategie-et-conseil', 'Services', [
     'service' => require __DIR__ . '/../config/services/strategie-conseil.php',
 ]);

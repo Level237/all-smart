@@ -4,22 +4,23 @@
 
 @section('content')
     <!-- Hero avec Tabs -->
-    <section class="relative h-[48vh] min-h-[380px] w-full overflow-hidden sm:min-h-[420px]">
+    <section class="relative h-[42vh] min-h-[340px] w-full sm:min-h-[380px]">
         <!-- Image de fond -->
-        <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 z-0 overflow-hidden">
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ asset($pack['heroImage'] ?? 'assets/packs/hero-pack1.jpg') }}');"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
         </div>
 
-        <!-- Tabs superposés en bas de l'image -->
-        <div class="absolute bottom-0 left-0 right-0 z-20 flex justify-center px-3 sm:px-6 lg:px-8">
-            <div class="w-full max-w-3xl overflow-hidden rounded-t-[14px] bg-gradient-to-b from-[#a0704a] to-[#6b4530] shadow-lg">
+        <!-- Tabs superposés à cheval sur le bord inférieur (plus bas) -->
+        <div class="absolute bottom-0 left-0 right-0 z-20 flex justify-center px-3 sm:px-6 lg:px-8 translate-y-1/2">
+            <div class="w-full max-w-4xl overflow-hidden rounded-[8px] sm:rounded-[10px] bg-white shadow-[0_12px_32px_rgba(0,0,0,0.14)] border border-gray-200/80">
                 @php
                     $currentSlug = $pack['slug'] ?? 'visibilite';
                     $tabs = [
                         ['name' => 'Visibilité', 'slug' => 'visibilite', 'url' => '/packs/visibilite'],
                         ['name' => 'Croissance', 'slug' => 'croissance', 'url' => '/packs/croissance'],
                         ['name' => 'Image Premium', 'slug' => 'image-premium', 'url' => '/packs/image-premium'],
+                        ['name' => 'Activation 360°', 'slug' => 'activation-360', 'url' => '/packs/activation-360'],
                     ];
                 @endphp
 
@@ -29,7 +30,7 @@
                             $isActive = ($currentSlug === $tab['slug']);
                         @endphp
                         <a href="{{ $tab['url'] }}" 
-                           class="flex-1 whitespace-nowrap border-r border-white/20 px-3 py-3 text-center text-xs font-bold text-white transition-all duration-300 last:border-r-0 hover:bg-black/20 sm:px-6 sm:py-3.5 sm:text-sm md:text-base {{ $isActive ? 'bg-[#4a2e1a] text-white shadow-inner font-extrabold ring-1 ring-inset ring-white/10' : 'opacity-90' }}">
+                           class="flex-1 whitespace-nowrap border-r border-gray-300 px-3 py-3.5 text-center text-xs font-bold transition-all duration-300 last:border-r-0 sm:px-6 sm:py-4 sm:text-sm md:text-base {{ $isActive ? 'bg-[#8C8780] text-white shadow-inner font-extrabold' : 'bg-white text-[#1f1f1f] hover:bg-gray-50' }}">
                             {{ $tab['name'] }}
                         </a>
                     @endforeach
@@ -38,20 +39,20 @@
         </div>
     </section>
 
-    <!-- Contenu principal -->
-    <section class="bg-white py-12 sm:py-16 md:py-20">
+    <!-- Contenu principal (avec padding-top adapté à la carte superposée) -->
+    <section class="bg-white pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20">
         <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             
             <!-- Titre & Sous-titre -->
             <h1 class="text-3xl font-black leading-tight tracking-[-0.02em] text-[#F5791F] sm:text-4xl md:text-[2.8rem]">
                 {{ $pack['title'] }}
             </h1>
-            <h2 class="mt-1 text-2xl font-black tracking-[-0.02em] text-[#1A1A1A] sm:text-3xl md:text-[2.2rem]">
+            <h2 class="mt-1 text-2xl font-semibold tracking-[-0.02em] text-[#F5791F] sm:text-3xl md:text-[2.2rem]">
                 {{ $pack['subtitle'] }}
             </h2>
 
             <!-- Intro -->
-            <p class="mt-6 max-w-3xl text-base leading-7 text-gray-700 md:text-lg md:leading-8">
+            <p class="mt-6 max-w-3xl text-base leading-7 text-[#1f1f1f] md:text-lg md:leading-8">
                 {{ $pack['intro'] }}
             </p>
 
@@ -63,7 +64,7 @@
 
                 <ul class="mt-4 space-y-3 sm:space-y-3.5">
                     @foreach($pack['items'] as $item)
-                        <li class="flex items-start gap-3 text-base leading-7 text-gray-800 md:text-lg">
+                        <li class="flex items-start gap-3 text-base leading-7 text-[#1f1f1f] md:text-lg">
                             <span class="mt-2.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[#F5791F]"></span>
                             <span>{{ $item }}</span>
                         </li>
@@ -79,7 +80,7 @@
 
                 <ul class="mt-4 space-y-3 sm:space-y-3.5">
                     @foreach($pack['results'] as $item)
-                        <li class="flex items-start gap-3 text-base leading-7 text-gray-800 md:text-lg">
+                        <li class="flex items-start gap-3 text-base leading-7 text-[#1f1f1f] md:text-lg">
                             <span class="mt-2.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[#F5791F]"></span>
                             <span>{{ $item }}</span>
                         </li>
