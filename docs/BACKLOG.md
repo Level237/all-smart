@@ -20,9 +20,9 @@ Ce fichier recense l'ensemble des tâches et fonctionnalités ordonnées.
 - [x] **B-07** : Validation responsive mobile (375px) sur toutes les vues publiques (layout overflow, menu mobile, boutons CTA réels, espacements cartes).
 
 ### Phase 2 — Back-Office & Administration
-- [ ] **B-08** : Modèle, migration et seeder pour l'administrateur (`User` / rôle `admin`).
-- [ ] **B-09** : Authentification Admin sécurisée : route `/admin/login`, contrôleur d'auth, rate-limiting, protection CSRF, déconnexion.
-- [ ] **B-10** : Layout de l'administration (`resources/views/admin/layouts/app.blade.php`) et dashboard d'accueil admin.
+- [x] **B-08** : Modèle, migration et seeder pour l'administrateur (`User` / rôle `admin`, méthode `isAdmin()`, seeder `AdminUserSeeder`).
+- [x] **B-09** : Authentification Admin sécurisée : route `/admin/login`, contrôleur d'auth, rate-limiting anti brute-force, protection CSRF, middleware `AdminMiddleware`, déconnexion, tests automatisés.
+- [x] **B-10** : Layout de l'administration (`resources/views/admin/layouts/app.blade.php`) et dashboard d'accueil admin.
 - [ ] **B-11** : Module Rendez-vous Admin : migration `appointments`, tableau de bord avec listing des demandes, filtres par statut (*Nouveau*, *Confirmé*, *Terminé*, *Annulé*) et détails.
 - [ ] **B-12** : Module Équipe Admin : migration `team_members`, CRUD complet (nom, fonction, bio, ordre d'affichage, réseaux sociaux, upload photo).
 - [ ] **B-13** : Module Réalisations Admin : migration `portfolio_projects`, CRUD complet (titre, client, description, service lié, upload d'images).

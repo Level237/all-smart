@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -122,6 +123,37 @@ Route::redirect('/nous-contacter', '/contact');
 Route::view('/rendez-vous', 'RendezVous');
 Route::redirect('/prendre-rendez-vous', '/rendez-vous');
 Route::redirect('/rendezvous', '/rendez-vous');
+
+/*
+|--------------------------------------------------------------------------
+| Espace Administration (Back-Office)
+|--------------------------------------------------------------------------
+| L'URL est masquée et personnalisable via la variable d'environnement ADMIN_PATH
+| pour parer aux attaques ciblées et scanners de vulnérabilités sur /admin.
+*/
+
+$adminPrefix = env('ADMIN_PATH', 'smart-desk');
+
+// Routes Publiques Admin (Guest)
+Route::prefix($adminPrefix)->group(function () {
+    Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+});
+
+// Routes Protégées Admin (Middleware admin)
+Route::prefix($adminPrefix)->middleware(['admin'])->group(function () {
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+});
+
+// Leurre de sécurité : /admin renvoie systématiquement une erreur 404
+if ($adminPrefix !== 'admin') {
+    Route::any('/admin/{any?}', function () {
+        abort(404);
+    })->where('any', '.*');
+}
 
 
 
