@@ -56,7 +56,7 @@ class Team extends Model
             return asset($this->photo);
         }
 
-        return Storage::disk('public')->url($this->photo);
+        return asset('storage/' . $this->photo);
     }
 
     /**

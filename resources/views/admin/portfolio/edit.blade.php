@@ -18,7 +18,7 @@
         <div class="bg-white p-6 rounded-2xl border border-[#E5E7EB]">
             <h1 class="text-xl sm:text-2xl font-bold text-[#1A1A1A] tracking-tight">Modifier la Réalisation</h1>
             <p class="text-xs sm:text-sm text-[#555555] mt-1">
-                Mettez à jour les informations du projet « {{ $project->title }} ».
+                Mettez à jour les informations et l'étude de cas du projet « {{ $project->title }} ».
             </p>
         </div>
 
@@ -78,10 +78,25 @@
                 </div>
             </div>
 
-            <!-- Description -->
+            <!-- Le Défi Initial (Challenge) -->
+            <div>
+                <label for="challenge" class="block text-xs font-bold uppercase tracking-wider text-[#F5791F] mb-1.5">
+                    Le Défi Initial (Problématique client)
+                </label>
+                <textarea id="challenge" 
+                          name="challenge" 
+                          rows="2" 
+                          placeholder="Quel était l'enjeu principal du client avant l'intervention d'AllSmart ?"
+                          class="w-full rounded-xl bg-white px-4 py-3 text-sm text-[#1A1A1A] border border-[#E5E7EB] focus:border-[#F5791F] focus:outline-none focus:ring-2 focus:ring-[#F5791F]/20 transition-all placeholder:text-[#555555]/50">{{ old('challenge', $project->challenge) }}</textarea>
+                @error('challenge')
+                    <p class="mt-1 text-xs text-[#DC2626] font-medium">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Description / Stratégie & Réalisation -->
             <div>
                 <label for="description" class="block text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1.5">
-                    Description du Projet
+                    Stratégie & Déploiement AllSmart
                 </label>
                 <textarea id="description" 
                           name="description" 
@@ -92,8 +107,53 @@
                 @enderror
             </div>
 
-            <!-- Image de couverture avec aperçu actuel -->
+            <!-- Livrables Réalisés -->
             <div>
+                <label for="deliverables" class="block text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1.5">
+                    Livrables Clés
+                </label>
+                <input type="text" 
+                       id="deliverables" 
+                       name="deliverables" 
+                       value="{{ old('deliverables', $project->deliverables) }}" 
+                       placeholder="Ex: Scénographie, Captation 4K, 15 Reels, Campagne Meta"
+                       class="w-full rounded-xl bg-white px-4 py-3 text-sm text-[#1A1A1A] border border-[#E5E7EB] focus:border-[#F5791F] focus:outline-none focus:ring-2 focus:ring-[#F5791F]/20 transition-all placeholder:text-[#555555]/50">
+                <p class="mt-1 text-[11px] text-[#555555]">Séparez les livrables par des virgules.</p>
+                @error('deliverables')
+                    <p class="mt-1 text-xs text-[#DC2626] font-medium">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Chiffres Clés & Résultats (3 KPIs) -->
+            <div class="border-t border-[#E5E7EB] pt-6">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-3">
+                    Impact & Chiffres Clés (Optionnels)
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    @for($i = 0; $i < 3; $i++)
+                        @php
+                            $metricVal = old("metrics.{$i}.value", $project->metrics[$i]['value'] ?? '');
+                            $metricLbl = old("metrics.{$i}.label", $project->metrics[$i]['label'] ?? '');
+                        @endphp
+                        <div class="p-3 bg-[#FAF4EF]/50 rounded-xl border border-[#F4E6D9] space-y-2">
+                            <span class="text-[11px] font-bold text-[#F5791F]">Métrique {{ $i + 1 }}</span>
+                            <input type="text" 
+                                   name="metrics[{{ $i }}][value]" 
+                                   value="{{ $metricVal }}" 
+                                   placeholder="Valeur (ex: +180%)"
+                                   class="w-full rounded-lg bg-white px-3 py-1.5 text-xs text-[#1A1A1A] border border-[#E5E7EB] focus:border-[#F5791F] focus:outline-none">
+                            <input type="text" 
+                                   name="metrics[{{ $i }}][label]" 
+                                   value="{{ $metricLbl }}" 
+                                   placeholder="Libellé (ex: Portée)"
+                                   class="w-full rounded-lg bg-white px-3 py-1.5 text-xs text-[#555555] border border-[#E5E7EB] focus:border-[#F5791F] focus:outline-none">
+                        </div>
+                    @endfor
+                </div>
+            </div>
+
+            <!-- Image de couverture avec aperçu actuel -->
+            <div class="border-t border-[#E5E7EB] pt-6">
                 <label for="image" class="block text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1.5">
                     Visuel / Image du projet
                 </label>
@@ -120,7 +180,7 @@
             </div>
 
             <!-- Lien externe -->
-            <div>
+            <div class="border-t border-[#E5E7EB] pt-6">
                 <label for="link" class="block text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1.5">
                     Lien externe (Optionnel)
                 </label>

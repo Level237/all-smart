@@ -63,9 +63,9 @@ class AdminPortfolioTest extends TestCase
     }
 
     /**
-     * L'administrateur peut créer un projet avec upload d'image.
+     * L'administrateur peut créer un projet avec upload d'image et métadonnées d'étude de cas.
      */
-    public function test_admin_can_create_project_with_image(): void
+    public function test_admin_can_create_project_with_image_and_case_study_details(): void
     {
         $image = UploadedFile::fake()->create('project.jpg', 200, 'image/jpeg');
 
@@ -73,7 +73,13 @@ class AdminPortfolioTest extends TestCase
             'title' => 'Campagne FECA-Scrabble 2026',
             'client' => 'Fédération Camerounaise de Scrabble',
             'service' => 'Community Management',
+            'challenge' => 'Dynamiser l image de la discipline auprès des jeunes.',
             'description' => 'Couverture complète et stratégie d engagement social.',
+            'deliverables' => 'Scénographie, 15 Reels, Captation 4K',
+            'metrics' => [
+                ['value' => '+180%', 'label' => 'Portée'],
+                ['value' => '50K+', 'label' => 'Vues'],
+            ],
             'image' => $image,
             'link' => 'https://feca-scrabble.cm',
             'order' => 1,
@@ -88,6 +94,8 @@ class AdminPortfolioTest extends TestCase
             'title' => 'Campagne FECA-Scrabble 2026',
             'client' => 'Fédération Camerounaise de Scrabble',
             'service' => 'Community Management',
+            'challenge' => 'Dynamiser l image de la discipline auprès des jeunes.',
+            'deliverables' => 'Scénographie, 15 Reels, Captation 4K',
             'is_active' => true,
             'is_featured' => true,
         ]);
@@ -95,10 +103,11 @@ class AdminPortfolioTest extends TestCase
         $project = PortfolioProject::where('title', 'Campagne FECA-Scrabble 2026')->first();
         $this->assertNotNull($project->image);
         Storage::disk('public')->assertExists($project->image);
+        $this->assertCount(2, $project->metrics);
     }
 
     /**
-     * L'administrateur peut modifier un projet.
+     * L'administrateur peut modifier un projet et ses métriques.
      */
     public function test_admin_can_update_project(): void
     {
@@ -113,6 +122,8 @@ class AdminPortfolioTest extends TestCase
             'title' => 'Projet Mis à Jour',
             'client' => 'Nouveau Client',
             'service' => 'Site Internet',
+            'challenge' => 'Nouveau défi relevé avec brio.',
+            'deliverables' => 'Site web, SEO',
             'is_active' => '1',
             'is_featured' => '0',
             'order' => 5,
@@ -126,6 +137,8 @@ class AdminPortfolioTest extends TestCase
             'title' => 'Projet Mis à Jour',
             'client' => 'Nouveau Client',
             'service' => 'Site Internet',
+            'challenge' => 'Nouveau défi relevé avec brio.',
+            'deliverables' => 'Site web, SEO',
             'order' => 5,
         ]);
     }
@@ -157,13 +170,18 @@ class AdminPortfolioTest extends TestCase
     }
 
     /**
-     * La page publique /realisations affiche les projets actifs et masque les inactifs.
+     * La page publique /realisations affiche les projets actifs, le composant modal et masque les inactifs.
      */
-    public function test_public_realisations_page_displays_active_projects(): void
+    public function test_public_realisations_page_displays_active_projects_and_modal(): void
     {
         $activeProject = PortfolioProject::create([
             'title' => 'Activation Publique Visible',
             'service' => 'Personal Branding',
+            'challenge' => 'Visibilité forte du dirigeant',
+            'description' => 'Stratégie menée par AllSmart',
+            'metrics' => [
+                ['value' => '+200%', 'label' => 'Abonnés'],
+            ],
             'is_active' => true,
         ]);
 
@@ -177,7 +195,11 @@ class AdminPortfolioTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('Activation Publique Visible');
+        $response->assertSee('Visibilité forte du dirigeant');
         $response->assertDontSee('Projet Furtif Brouillon');
+        // Vérifie la présence du modal et des actions de conversion
+        $response->assertSee('selectedProject !== null', false);
+        $response->assertSee('Discuter d\'un projet similaire', false);
     }
 
     /**

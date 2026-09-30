@@ -70,7 +70,7 @@ class PortfolioProject extends Model
             return asset($this->image);
         }
 
-        return Storage::disk('public')->url($this->image);
+        return asset('storage/' . $this->image);
     }
 
     /**
