@@ -166,4 +166,55 @@ class AdminTeamTest extends TestCase
         $responseWithTeam->assertSee('Danièle Nono');
         $responseWithTeam->assertSee('Fondatrice');
     }
+
+    /**
+     * La page publique Qui Sommes-Nous limite l'affichage à 4 membres et propose le lien vers /equipe.
+     */
+    public function test_about_us_page_limits_to_four_members_and_links_to_team(): void
+    {
+        for ($i = 1; $i <= 6; $i++) {
+            Team::create([
+                'name' => "Membre Numéro {$i}",
+                'role' => "Rôle {$i}",
+                'order' => $i,
+                'is_active' => true,
+            ]);
+        }
+
+        $response = $this->get('/qui-sommes-nous');
+        $response->assertStatus(200);
+        $response->assertSee('Membre Numéro 1');
+        $response->assertSee('Membre Numéro 4');
+        $response->assertDontSee('Membre Numéro 5');
+        $response->assertDontSee('Membre Numéro 6');
+        $response->assertSee(route('team.index'));
+        $response->assertSee('Découvrir toute la Smart Team');
+    }
+
+    /**
+     * La page /equipe liste tous les membres actifs et /team redirige vers /equipe.
+     */
+    public function test_equipe_page_renders_all_members_and_redirects(): void
+    {
+        for ($i = 1; $i <= 6; $i++) {
+            Team::create([
+                'name' => "Membre AllSmart {$i}",
+                'role' => "Expert {$i}",
+                'order' => $i,
+                'is_active' => true,
+            ]);
+        }
+
+        $response = $this->get('/equipe');
+        $response->assertStatus(200);
+        for ($i = 1; $i <= 6; $i++) {
+            $response->assertSee("Membre AllSmart {$i}");
+            $response->assertSee("Expert {$i}");
+        }
+        $response->assertSee('Toute la Smart Team (6)');
+
+        // Test redirection de /team vers /equipe
+        $redirectResponse = $this->get('/team');
+        $redirectResponse->assertRedirect('/equipe');
+    }
 }

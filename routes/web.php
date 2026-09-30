@@ -67,6 +67,13 @@ Route::get('/qui-sommes-nous', function () {
     return view('AboutUs', compact('teams'));
 });
 
+Route::get('/equipe', function () {
+    $teams = Team::query()->active()->ordered()->get();
+    return view('Equipe', compact('teams'));
+})->name('team.index');
+
+Route::redirect('/team', '/equipe');
+
 Route::redirect('/packs', '/packs/visibilite');
 
 Route::view('/packs/visibilite', 'Pack', [

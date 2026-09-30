@@ -1,257 +1,345 @@
-<section class="relative -mt-32 lg:-mt-40 px-4 sm:px-6 lg:px-8 pb-16">
-    <div class="mx-auto max-w-6xl">
-        <div class="rounded-[32px] bg-[#F5791F] px-6 py-10 shadow-[0_18px_44px_rgba(17,24,39,0.12)] sm:px-10 sm:py-12 lg:px-14 lg:py-16">
+@props(['teams' => null])
+
+@php
+    $teamMembers = $teams ?? \App\Models\Team::query()->active()->ordered()->get();
+@endphp
+
+<!-- Section 1 : Le Manifeste & Positionnement de l'Agence -->
+<section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            <!-- Main Title -->
-            <div class="mb-10">
-                <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">
-                    Bienvenue chez AllSmart
-                </h1>
-                <div class="mt-3 h-1.5 w-20 bg-gray-900 rounded-full"></div>
-            </div>
+            <!-- Colonne Gauche : Récit & Vision -->
+            <div class="lg:col-span-7 space-y-6">
+                <div>
+                    <span class="font-zeyada text-3xl sm:text-4xl text-[#F5791F] block mb-1">
+                        Notre Vision & ADN
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tight leading-tight">
+                        Combler le fossé entre la rigueur du conseil et la force de la création.
+                    </h2>
+                </div>
 
-            <!-- Historique & Positionnement -->
-            <div class="mb-12">
-                <h2 class="font-['Zeyada'] text-3xl sm:text-4xl lg:text-5xl text-[#fff7f0] mb-6">
-                    Historique &amp; Positionnement
-                </h2>
-                
-                <div class="space-y-5 text-base leading-relaxed text-gray-900 sm:text-lg lg:text-xl max-w-4xl">
+                <div class="space-y-4 text-sm sm:text-base text-[#555555] leading-relaxed">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercit ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <strong class="text-[#1A1A1A]">AllSmart Consulting</strong> est née d'une conviction fondamentale : une stratégie sans créativité reste invisible, et une créativité sans stratégie reste stérile. Dans un univers digital saturé, les marques et les personnalités publiques ont besoin d'une voix singulière pour émerger et s'imposer.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercit ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Notre agence combine le diagnostic méthodique d'un cabinet de conseil, le sens esthétique d'un studio créatif et l'énergie pragmatique des activations événementielles. Nous pensons votre image comme un actif stratégique générateur de valeur durable.
+                    </p>
+                </div>
+
+                <div class="pt-2">
+                    <a href="/rendez-vous" class="inline-flex items-center gap-2 rounded-xl bg-[#1A1A1A] px-6 py-3 text-xs sm:text-sm font-bold text-white hover:bg-[#F5791F] transition-colors shadow-sm">
+                        <span>Échanger avec notre direction</span>
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Colonne Droite : 3 Cartes de Chiffres Clés -->
+            <div class="lg:col-span-5 space-y-4 sm:space-y-5">
+                <div class="rounded-2xl border border-[#F4E6D9] bg-[#FAF4EF] p-6 sm:p-7 shadow-xs">
+                    <span class="block text-4xl sm:text-5xl font-black text-[#F5791F]">360°</span>
+                    <h3 class="mt-2 text-base font-bold text-[#1A1A1A]">Approche Intégrée</h3>
+                    <p class="mt-1 text-xs text-[#555555] leading-relaxed">
+                        De la réflexion stratégique jusqu'au déploiement opérationnel sur le terrain et en ligne.
+                    </p>
+                </div>
+
+                <div class="rounded-2xl border border-[#F4E6D9] bg-[#FAF4EF] p-6 sm:p-7 shadow-xs">
+                    <span class="block text-4xl sm:text-5xl font-black text-[#F5791F]">+100</span>
+                    <h3 class="mt-2 text-base font-bold text-[#1A1A1A]">Projets & Événements</h3>
+                    <p class="mt-1 text-xs text-[#555555] leading-relaxed">
+                        Campagnes digitales, tournois nationaux, identités visuelles et stratégies d'influence menés à bien.
+                    </p>
+                </div>
+
+                <div class="rounded-2xl border border-[#F4E6D9] bg-[#FAF4EF] p-6 sm:p-7 shadow-xs">
+                    <span class="block text-4xl sm:text-5xl font-black text-[#F5791F]">7</span>
+                    <h3 class="mt-2 text-base font-bold text-[#1A1A1A]">Pôles d'Expertise Métier</h3>
+                    <p class="mt-1 text-xs text-[#555555] leading-relaxed">
+                        Conseil, Community Management, Contenus, Personal Branding, Web, Événementiel et Influence.
                     </p>
                 </div>
             </div>
 
-            <!-- Méthodologie -->
-            <!-- Méthodologie -->
-<div>
-    <h2 class="font-['Zeyada'] text-3xl sm:text-4xl lg:text-5xl text-[#fff7f0] mb-10">
-        Méthodologie
-    </h2>
-
-    <div class="relative mb-16">
-        <!-- Desktop: Horizontal with connectors -->
-        <div class="hidden lg:flex items-center justify-between">
-            <!-- Step 1: Analyse -->
-            <div class="relative flex-1">
-                <div class="bg-[#3D6B7A] rounded-2xl p-6 mr-3 text-white shadow-lg text-center group hover:shadow-xl min-h-[160px] flex flex-col items-center justify-center">
-                    <div class="mb-3 flex h-14 w-14 items-center justify-center overflow-hidden   group-hover:scale-110 transition-transform duration-300">
-                        <img src="{{ asset('assets/icons/analyse.png') }}" alt="Analyse" class="h-8 w-8 object-contain" />
-                    </div>
-                    <h3 class="text-xl font-bold">Analyse</h3>
-                </div>
-                <!-- Connector Circle -->
-                <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-gray-300 rounded-full border-4 border-[#F5791F] z-10"></div>
-            </div>
-
-            <!-- Step 2: Stratégie -->
-            <div class="relative flex-1">
-                <div class="bg-[#F5791F] rounded-2xl mr-3 p-6 text-white shadow-lg text-center group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 min-h-[160px] flex flex-col items-center justify-center">
-                    <div class="mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full  group-hover:scale-110 transition-transform duration-300">
-                        <img src="{{ asset('assets/icons/strategie.png') }}" alt="Stratégie" class="h-8 w-8 object-contain" />
-                    </div>
-                    <h3 class="text-xl font-bold">Stratégie</h3>
-                </div>
-                <!-- Connector Circle -->
-                <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-gray-300 rounded-full border-4 border-[#F5791F] z-10"></div>
-            </div>
-
-            <!-- Step 3: Exécution -->
-            <div class="relative flex-1">
-                <div class="bg-[#e9e2d7] rounded-2xl mr-3 p-6 text-gray-900 shadow-lg text-center group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 min-h-[160px] flex flex-col items-center justify-center">
-                    <div class="mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full  group-hover:scale-110 transition-transform duration-300">
-                        <img src="{{ asset('assets/icons/execution.png') }}" alt="Exécution" class="h-8 w-8 object-contain" />
-                    </div>
-                    <h3 class="text-xl font-bold">Exécution</h3>
-                </div>
-                <!-- Connector Circle -->
-                <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-14 h-14 bg-gray-300 rounded-full border-4 border-[#F5791F] z-10"></div>
-            </div>
-
-            <!-- Step 4: Optimisation -->
-            <div class="flex-1">
-                <div class="bg-[#f0d4bd] rounded-2xl p-6 text-gray-900 shadow-lg text-center group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 min-h-[160px] flex flex-col items-center justify-center">
-                    <div class="mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full  group-hover:scale-110 transition-transform duration-300">
-                        <img src="{{ asset('assets/icons/optimisation.png') }}" alt="Optimisation" class="h-8 w-8 object-contain" />
-                    </div>
-                    <h3 class="text-xl font-bold">Optimisation</h3>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile/Tablet: Vertical Stack -->
-        <div class="lg:hidden grid gap-4">
-            <div class="bg-[#3D6B7A] rounded-2xl p-6 text-white shadow-lg text-center">
-                <div class="mx-auto mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-white/20">
-                    <img src="{{ asset('assets/analyse.png') }}" alt="Analyse" class="h-8 w-8 object-contain" />
-                </div>
-                <h3 class="text-xl font-bold">Analyse</h3>
-            </div>
-            <div class="bg-[#F5791F] rounded-2xl p-6 text-white shadow-lg text-center">
-                <div class="mx-auto mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-white/20">
-                    <img src="{{ asset('assets/strategie.png') }}" alt="Stratégie" class="h-8 w-8 object-contain" />
-                </div>
-                <h3 class="text-xl font-bold">Stratégie</h3>
-            </div>
-            <div class="bg-[#e9e2d7] rounded-2xl p-6 text-gray-900 shadow-lg text-center">
-                <div class="mx-auto mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-white/60">
-                    <img src="{{ asset('assets/execution.png') }}" alt="Exécution" class="h-8 w-8 object-contain" />
-                </div>
-                <h3 class="text-xl font-bold">Exécution</h3>
-            </div>
-            <div class="bg-[#f0d4bd] rounded-2xl p-6 text-gray-900 shadow-lg text-center">
-                <div class="mx-auto mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-white/60">
-                    <img src="{{ asset('assets/optimisation.png') }}" alt="Optimisation" class="h-8 w-8 object-contain" />
-                </div>
-                <h3 class="text-xl font-bold">Optimisation</h3>
-            </div>
         </div>
     </div>
+</section>
 
-    <!-- Nos Valeurs Section -->
-    <div class="relative rounded-[28px] bg-[#ffe4d4] px-8 pt-8 pb-4 shadow-[0_10px_30px_rgba(17,24,39,0.08)] lg:px-12 lg:pt-12 lg:pb-6">
-    <!-- Header: Title + Text -->
-    <div class="max-w-5xl">
-        <h2 class="text-4xl font-black tracking-[-0.04em] text-gray-900 sm:text-5xl">Nos Valeurs</h2>
-
-        <div class="mt-5 text-base leading-relaxed text-gray-800 lg:text-[1.15rem] lg:leading-8">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<!-- Section 2 : Notre Méthode en 4 Étapes -->
+<section class="py-16 sm:py-20 lg:py-24 bg-[#FAF4EF]/50 border-y border-[#F4E6D9]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- En-tête de section -->
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <span class="font-zeyada text-3xl sm:text-4xl text-[#F5791F] block mb-1">
+                Une démarche éprouvée
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tight">
+                Notre Méthode en 4 Étapes
+            </h2>
+            <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-[#555555] leading-relaxed">
+                Chaque mission suit un processus rigoureux et agile pour garantir une visibilité optimale et un retour sur investissement tangible.
             </p>
         </div>
-    </div>
 
-    <!-- Container bleu centré en bas, plus étroit que le parent -->
-    <div class="relative z-10 mb-[-80px] lg:mb-[-110px] mt-12 mx-auto w-[92%] sm:w-[85%] max-w-4xl overflow-hidden rounded-[24px] bg-[#3f8fa2] px-6 py-10 sm:px-10 lg:px-12">
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 justify-items-center">
-            @foreach(['01', '02', '03', '04', '05'] as $value)
-                <div class="flex flex-col items-center justify-center text-center text-white">
-                    <!-- Diamond with sparkles -->
-                    <svg class="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <!-- Sparkles/Rays -->
-                        <line x1="50" y1="8" x2="50" y2="18" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        <line x1="22" y1="18" x2="29" y2="25" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        <line x1="78" y1="18" x2="71" y2="25" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        <line x1="10" y1="45" x2="20" y2="45" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        <line x1="90" y1="45" x2="80" y2="45" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        
-                        <!-- Diamond shape -->
-                        <path d="M50 25L78 45L50 85L22 45L50 25Z" stroke="white" stroke-width="3" stroke-linejoin="round" fill="none"/>
-                        <path d="M22 45L50 45L78 45" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                        <path d="M36 45L50 25L64 45" stroke="white" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
-                        <path d="M36 45L50 85L64 45" stroke="white" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
-                        <path d="M50 25L50 45" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                        <path d="M50 45L50 85" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                    </svg>
-                    <p class="mt-3 text-base font-bold sm:text-lg lg:text-xl">valeur {{ $value }}</p>
+        <!-- Grille des 4 étapes méthodologiques -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Étape 1 -->
+            <div class="rounded-2xl bg-white p-6 sm:p-7 border border-[#E5E7EB] shadow-xs flex flex-col justify-between">
+                <div>
+                    <span class="text-3xl font-black text-[#F5791F] block mb-3">01.</span>
+                    <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Immersion & Audit</h3>
+                    <p class="text-xs sm:text-sm text-[#555555] leading-relaxed">
+                        Analyse approfondie de votre historique, benchmark sectoriel et identification précise de vos leviers de différenciation.
+                    </p>
                 </div>
-            @endforeach
+                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-[11px] font-bold text-[#F5791F]">
+                    <span>Phase Diagnostic</span>
+                </div>
+            </div>
+
+            <!-- Étape 2 -->
+            <div class="rounded-2xl bg-white p-6 sm:p-7 border border-[#E5E7EB] shadow-xs flex flex-col justify-between">
+                <div>
+                    <span class="text-3xl font-black text-[#F5791F] block mb-3">02.</span>
+                    <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Conception Stratégique</h3>
+                    <p class="text-xs sm:text-sm text-[#555555] leading-relaxed">
+                        Définition du positionnement, de la ligne éditoriale, des messages clés et de la feuille de route opérationnelle.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-[11px] font-bold text-[#F5791F]">
+                    <span>Phase Architecture</span>
+                </div>
+            </div>
+
+            <!-- Étape 3 -->
+            <div class="rounded-2xl bg-white p-6 sm:p-7 border border-[#E5E7EB] shadow-xs flex flex-col justify-between">
+                <div>
+                    <span class="text-3xl font-black text-[#F5791F] block mb-3">03.</span>
+                    <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Production & Déploiement</h3>
+                    <p class="text-xs sm:text-sm text-[#555555] leading-relaxed">
+                        Création des contenus visuels, scénographie événementielle, développement web et activation médiatique multicanale.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-[11px] font-bold text-[#F5791F]">
+                    <span>Phase Exécution</span>
+                </div>
+            </div>
+
+            <!-- Étape 4 -->
+            <div class="rounded-2xl bg-white p-6 sm:p-7 border border-[#E5E7EB] shadow-xs flex flex-col justify-between">
+                <div>
+                    <span class="text-3xl font-black text-[#F5791F] block mb-3">04.</span>
+                    <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Mesure & Optimisation</h3>
+                    <p class="text-xs sm:text-sm text-[#555555] leading-relaxed">
+                        Suivi des KPIs, mesure de l'engagement réel, analyse des retombées et ajustements continus de la performance.
+                    </p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-[11px] font-bold text-[#F5791F]">
+                    <span>Phase Pérennisation</span>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
+</section>
 
-    @php
-        $teamMembers = $teams ?? \App\Models\Team::query()->active()->ordered()->get();
-    @endphp
+<!-- Section 3 : Nos 4 Valeurs Fondatrices -->
+<section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- En-tête de section -->
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <span class="font-zeyada text-3xl sm:text-4xl text-[#F5791F] block mb-1">
+                Ce qui nous guide au quotidien
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tight">
+                Nos 4 Piliers Fondateurs
+            </h2>
+            <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-[#555555] leading-relaxed">
+                Des principes cardinaux qui orientent chacune de nos recommandations et chacune de nos créations.
+            </p>
+        </div>
 
-    @if($teamMembers && $teamMembers->isNotEmpty())
-    <section class="mt-24 pb-8 lg:mt-28">
-    <div class="bg-[#F5791F] px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-        <div class="mx-auto max-w-[1400px]">
-            <!-- Titre -->
-            <h2 class="text-3xl font-black leading-none tracking-[-0.05em] text-[#2b221e] sm:text-5xl lg:text-6xl">
+        <!-- Grille des 4 Valeurs -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            
+            <!-- Pilier 1 : Audace Créative -->
+            <div class="rounded-3xl border border-[#E5E7EB] bg-white p-7 text-left shadow-xs hover:border-[#F5791F]/40 transition-colors">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FAF4EF] text-[#F5791F] mb-5">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.516 0c.85.493 1.508 1.333 1.508 2.316V18"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Audace Créative</h3>
+                <p class="text-xs sm:text-sm text-[#555555] leading-relaxed">
+                    Nous refusons les formules convenues. Nous créons des concepts percutants qui captent l'attention et impriment les esprits.
+                </p>
+            </div>
+
+            <!-- Pilier 2 : Rigueur Exécutive -->
+            <div class="rounded-3xl border border-[#E5E7EB] bg-white p-7 text-left shadow-xs hover:border-[#F5791F]/40 transition-colors">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FAF4EF] text-[#F5791F] mb-5">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Rigueur Exécutive</h3>
+                <p class="text-xs sm:text-sm text-[#555555] leading-relaxed">
+                    L'excellence se joue dans le détail : précision des plannings, finitions scénographiques et tenue irréprochable de chaque promesse.
+                </p>
+            </div>
+
+            <!-- Pilier 3 : Proximité & Écoute -->
+            <div class="rounded-3xl border border-[#E5E7EB] bg-white p-7 text-left shadow-xs hover:border-[#F5791F]/40 transition-colors">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FAF4EF] text-[#F5791F] mb-5">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Proximité Humaine</h3>
+                <p class="text-xs sm:text-sm text-[#555555] leading-relaxed">
+                    Nous bâtissons des partenariats de long terme fondés sur l'écoute active, la transparence et une disponibilité constante.
+                </p>
+            </div>
+
+            <!-- Pilier 4 : Culture du Résultat -->
+            <div class="rounded-3xl border border-[#E5E7EB] bg-white p-7 text-left shadow-xs hover:border-[#F5791F]/40 transition-colors">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FAF4EF] text-[#F5791F] mb-5">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-[#1A1A1A] mb-2">Culture du Résultat</h3>
+                <p class="text-xs sm:text-sm text-[#555555] leading-relaxed">
+                    Chaque action doit générer un impact mesurable : progression de l'autorité, croissance d'audience et conversion business.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@if($teamMembers && $teamMembers->isNotEmpty())
+{{-- Section 4 : Smart Team (Uniquement si des membres existent) --}}
+@php
+    $teaserMembers = $teamMembers->take(4);
+@endphp
+<section class="py-16 sm:py-20 lg:py-24 bg-[#FAF4EF]/40 border-t border-[#F4E6D9]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- En-tête de section -->
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <span class="font-zeyada text-3xl sm:text-4xl text-[#F5791F] block mb-1">
+                L'énergie créative
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tight">
                 La Smart team
             </h2>
-            <div class="mt-4 sm:mt-6 h-2 w-24 bg-[#2b221e] lg:mt-8"></div>
+            <p class="mt-3 sm:mt-4 text-xs sm:text-sm text-[#555555] leading-relaxed">
+                Des stratèges, créateurs de contenus et coordinateurs événementiels unis pour faire rayonner votre marque.
+            </p>
+        </div>
 
-            <!-- Grid des membres -->
-            <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                @foreach($teamMembers as $member)
-                    <div class="group relative overflow-hidden rounded-lg bg-[#5f8d96] shadow-lg transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl">
-                        <!-- Image -->
-                        <div class="relative h-[440px] overflow-hidden">
-                            <img src="{{ $member->photo_url }}" 
-                                 alt="{{ strip_tags($member->name) }}" 
-                                 class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
-                        </div>
+        <!-- Grille des 4 Collaborateurs Phares -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            @foreach($teaserMembers as $member)
+                <div class="group flex flex-col rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#F5791F]/40 overflow-hidden shadow-xs hover:shadow-md transition-colors duration-200">
+                    
+                    <!-- Photo du collaborateur -->
+                    <div class="relative aspect-[3/4] w-full overflow-hidden bg-[#FAF4EF]">
+                        <img src="{{ $member->photo_url }}" 
+                             alt="{{ strip_tags($member->name) }}" 
+                             loading="lazy"
+                             class="h-full w-full object-cover object-top">
+                    </div>
 
-                        <!-- Bandeau bleu qui s'agrandit au hover -->
-                        <div class="absolute bottom-0 left-0 right-0 bg-[#5f8d96] px-5 pb-5 pt-4 transition-all duration-500 ease-out sm:px-6 sm:pb-6 sm:pt-5
-                                    h-auto md:h-[70px] md:group-hover:h-[220px] lg:group-hover:h-[240px]">
-                            
-                            <!-- Nom (toujours visible) -->
-                            <h3 class="text-2xl font-medium leading-tight text-white sm:text-3xl lg:text-4xl">
+                    <!-- Cartouche d'informations -->
+                    <div class="p-6 flex flex-1 flex-col justify-between space-y-4">
+                        <div>
+                            @if($member->role)
+                                <span class="inline-flex items-center rounded-full bg-[#FAF4EF] px-3 py-1 text-[11px] font-bold text-[#F5791F] border border-[#F4E6D9] w-fit mb-2.5">
+                                    {{ $member->role }}
+                                </span>
+                            @endif
+
+                            <h3 class="text-xl font-black text-[#1A1A1A] leading-snug">
                                 {!! $member->name !!}
                             </h3>
 
-                            <!-- Contenu visible sur mobile et révélé au hover sur desktop -->
-                            <div class="mt-3 overflow-hidden transition-all duration-500 ease-out opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0">
-                                @if($member->role)
-                                    <p class="text-xl font-medium text-white sm:text-2xl">{{ $member->role }}</p>
+                            @if($member->label)
+                                <p class="mt-1 font-['Zeyada'] text-xl text-[#555555]">
+                                    {{ $member->label }}
+                                </p>
+                            @endif
+                        </div>
+
+                        <!-- Réseaux sociaux du membre -->
+                        @if($member->instagram_url || $member->facebook_url || $member->x_url || $member->linkedin_url)
+                            <div class="pt-4 border-t border-[#E5E7EB] flex items-center justify-end gap-2">
+                                @if($member->linkedin_url)
+                                    <a href="{{ $member->linkedin_url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de {{ strip_tags($member->name) }}"
+                                       class="flex h-7 w-7 items-center justify-center rounded-full border border-[#E5E7EB] bg-white text-[#555555] hover:text-[#F5791F] hover:border-[#F5791F] transition-colors">
+                                        <svg class="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 0 0 1.64-1.64 1.64 1.64 0 1 0-3.28 0 1.64 1.64 0 0 0 1.64 1.64m1.39 9.74v-8.37H5.07v8.37h2.78Z"/>
+                                        </svg>
+                                    </a>
                                 @endif
 
-                                @if($member->label)
-                                    <p class="mt-1 font-['Zeyada'] text-lg text-white/90 sm:text-xl">{{ $member->label }}</p>
+                                @if($member->instagram_url)
+                                    <a href="{{ $member->instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram de {{ strip_tags($member->name) }}"
+                                       class="flex h-7 w-7 items-center justify-center rounded-full border border-[#E5E7EB] bg-white text-[#555555] hover:text-[#F5791F] hover:border-[#F5791F] transition-colors">
+                                        <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                            <circle cx="12" cy="12" r="4"></circle>
+                                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
+                                        </svg>
+                                    </a>
                                 @endif
 
-                                <!-- Icônes sociales dynamiques -->
-                                @if($member->instagram_url || $member->facebook_url || $member->x_url || $member->linkedin_url)
-                                    <div class="mt-3 flex items-center justify-end gap-2">
-                                        @if($member->instagram_url)
-                                            <a href="{{ $member->instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5">
-                                                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                                                    <circle cx="12" cy="12" r="4"></circle>
-                                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
-                                                </svg>
-                                            </a>
-                                        @endif
-                                        @if($member->facebook_url)
-                                            <a href="{{ $member->facebook_url }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5">
-                                                    <path d="M13.5 21v-8h2.7l.4-3h-3.1V7.5c0-.9.3-1.5 1.6-1.5H17V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3V10H8v3h2.4v8h3.1Z"/>
-                                                </svg>
-                                            </a>
-                                        @endif
-                                        @if($member->x_url)
-                                            <a href="{{ $member->x_url }}" target="_blank" rel="noopener noreferrer" aria-label="X" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5">
-                                                    <path d="M18.9 2h3.4l-7.4 8.5L22.6 22h-6.8l-5.3-7.8L4 22H.6l7.9-9L1.2 2h7l4.8 7.1L18.9 2Zm-1.2 18h1.9L7.1 3.9H5.1L17.7 20Z"/>
-                                                </svg>
-                                            </a>
-                                        @endif
-                                        @if($member->linkedin_url)
-                                            <a href="{{ $member->linkedin_url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5">
-                                                    <path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.7h2.9V18H5.5V9.7Zm4.8 0h2.8v1.1h.1c.4-.7 1.3-1.5 2.8-1.5 3 0 3.5 2 3.5 4.7V18h-2.9v-16.8h2.9v1.1c.7-.9 1.9-1.9 4-1.9 4.3 0 5.1 2.8 5.1 6.5V18h-2.9v-16.8H10.3V9.7Z"/>
-                                                </svg>
-                                            </a>
-                                        @endif
-                                    </div>
+                                @if($member->facebook_url)
+                                    <a href="{{ $member->facebook_url }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook de {{ strip_tags($member->name) }}"
+                                       class="flex h-7 w-7 items-center justify-center rounded-full border border-[#E5E7EB] bg-white text-[#555555] hover:text-[#F5791F] hover:border-[#F5791F] transition-colors">
+                                        <svg class="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M13.5 21v-8h2.7l.4-3h-3.1V7.5c0-.9.3-1.5 1.6-1.5H17V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3V10H8v3h2.4v8h3.1Z"/>
+                                        </svg>
+                                    </a>
+                                @endif
+
+                                @if($member->x_url)
+                                    <a href="{{ $member->x_url }}" target="_blank" rel="noopener noreferrer" aria-label="X de {{ strip_tags($member->name) }}"
+                                       class="flex h-7 w-7 items-center justify-center rounded-full border border-[#E5E7EB] bg-white text-[#555555] hover:text-[#F5791F] hover:border-[#F5791F] transition-colors">
+                                        <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M18.9 2h3.4l-7.4 8.5L22.6 22h-6.8l-5.3-7.8L4 22H.6l7.9-9L1.2 2h7l4.8 7.1L18.9 2Zm-1.2 18h1.9L7.1 3.9H5.1L17.7 20Z"/>
+                                        </svg>
+                                    </a>
                                 @endif
                             </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
-    @endif
+                        @endif
 
-</div>
-</div>
+                    </div>
+
+                </div>
+            @endforeach
         </div>
+
+        <!-- Bouton Vers la Page Équipe Dédiée -->
+        <div class="mt-12 sm:mt-16 text-center">
+            <a href="{{ route('team.index') }}" 
+               class="inline-flex items-center gap-2.5 rounded-xl bg-[#1A1A1A] hover:bg-[#F5791F] px-8 py-4 text-xs sm:text-sm font-bold text-white transition-colors shadow-sm">
+                <span>Découvrir toute la Smart Team ({{ $teamMembers->count() }} talents)</span>
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+                </svg>
+            </a>
+        </div>
+
     </div>
-    
 </section>
+@endif
