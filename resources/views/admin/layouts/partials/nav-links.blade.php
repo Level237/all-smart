@@ -57,6 +57,21 @@
     </a>
 </li>
 
+<!-- Réseau Créateurs -->
+<li>
+    @php
+        $hasCreatorsRoute = Route::has('admin.creators.index');
+        $isCreators = request()->routeIs('admin.creators.*');
+    @endphp
+    <a href="{{ $hasCreatorsRoute ? route('admin.creators.index') : '#' }}" 
+       class="group flex items-center gap-x-3 rounded-lg px-3 py-2.5 text-xs font-medium transition-all {{ $isCreators ? 'bg-[#FAF4EF] text-[#F5791F] font-bold border-l-4 border-[#F5791F]' : 'text-[#1A1A1A] hover:bg-[#FAF4EF]/60 hover:text-[#F5791F]' }}">
+        <svg class="h-5 w-5 shrink-0 {{ $isCreators ? 'text-[#F5791F]' : 'text-[#555555] group-hover:text-[#F5791F]' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632zM18 10.5h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
+        </svg>
+        <span>Réseau Créateurs</span>
+    </a>
+</li>
+
 <!-- Séparateur Navigation Secondaire -->
 <li class="pt-5 pb-2">
     <div class="text-[10px] font-bold tracking-wider text-[#555555]/60 uppercase px-3">

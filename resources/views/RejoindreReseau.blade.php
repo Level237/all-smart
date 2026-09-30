@@ -25,6 +25,8 @@
                 status: 'Disponible',
                 acceptConditions: false,
                 submitted: false,
+                loading: false,
+                errorMessage: '',
                 toggleItem(array, item) {
                     const idx = array.indexOf(item);
                     if (idx > -1) {
@@ -48,8 +50,35 @@
                         alert('Veuillez accepter les conditions pour continuer.');
                         return;
                     }
-                    this.submitted = true;
-                    window.scrollTo({ top: 400, behavior: 'smooth' });
+                    this.loading = true;
+                    this.errorMessage = '';
+                    const formData = new FormData(this.$refs.form);
+                    
+                    fetch('{{ route('creators.apply.submit') }}', {
+                        method: 'POST',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json',
+                        },
+                        body: formData
+                    })
+                    .then(async response => {
+                        if (!response.ok) {
+                            const err = await response.json().catch(() => ({}));
+                            throw new Error(err.message || 'Une erreur est survenue lors de l\'enregistrement.');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        this.submitted = true;
+                        this.loading = false;
+                        window.scrollTo({ top: 350, behavior: 'smooth' });
+                    })
+                    .catch(error => {
+                        this.loading = false;
+                        this.errorMessage = error.message;
+                        alert(this.errorMessage);
+                    });
                 }
              }">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -83,7 +112,21 @@
                 <div class="h-14 sm:h-20 w-full bg-gradient-to-r from-[#7D9AA4] via-[#8DA3AB] to-[#7D9AA4] shadow-inner"></div>
 
                 <!-- Contenu Interne de la Carte -->
-                <form @submit.prevent="submitForm()" class="p-6 sm:p-10 md:p-12 lg:p-16">
+                <form action="{{ route('creators.apply.submit') }}" 
+                      method="POST" 
+                      enctype="multipart/form-data" 
+                      x-ref="form" 
+                      @submit.prevent="submitForm()" 
+                      class="p-6 sm:p-10 md:p-12 lg:p-16">
+                    @csrf
+
+                    <!-- Champs masqués pour les tableaux dynamiques -->
+                    <template x-for="lang in selectedLanguages" :key="lang">
+                        <input type="hidden" name="languages[]" :value="lang">
+                    </template>
+                    <template x-for="niche in selectedNiches" :key="niche">
+                        <input type="hidden" name="niches[]" :value="niche">
+                    </template>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
                         
@@ -121,6 +164,7 @@
 
                                 <!-- Input file masqué -->
                                 <input type="file" 
+                                       name="photo"
                                        x-ref="photoInput" 
                                        @change="handlePhotoChange($event)" 
                                        accept="image/*" 

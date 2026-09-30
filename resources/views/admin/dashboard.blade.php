@@ -32,8 +32,8 @@
         </div>
     </div>
 
-    <!-- Niveau 1 : Grille des 4 Cartes KPI -->
-    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+    <!-- Niveau 1 : Grille des 5 Cartes KPI -->
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5 mb-8">
         
         <!-- KPI 1 : Rendez-vous -->
         <div class="rounded-2xl border border-[#E5E7EB] bg-white p-5 transition-colors hover:border-[#F5791F]">
@@ -51,7 +51,23 @@
             </div>
         </div>
 
-        <!-- KPI 2 : Smart Team -->
+        <!-- KPI 2 : Créateurs Réseau -->
+        <div class="rounded-2xl border border-[#E5E7EB] bg-white p-5 transition-colors hover:border-[#F5791F]">
+            <div class="flex items-center justify-between">
+                <p class="text-xs font-medium text-[#555555]">Réseau Créateurs</p>
+                <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#FAF4EF] text-[#F5791F]">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632zM18 10.5h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="mt-2">
+                <span class="text-3xl font-bold tracking-tight text-[#1A1A1A]">{{ \App\Models\Creator::active()->count() }}</span>
+                <p class="text-[11px] text-[#555555] mt-1">en ligne ({{ \App\Models\Creator::count() }} total)</p>
+            </div>
+        </div>
+
+        <!-- KPI 3 : Smart Team -->
         <div class="rounded-2xl border border-[#E5E7EB] bg-white p-5 transition-colors hover:border-[#1A1A1A]">
             <div class="flex items-center justify-between">
                 <p class="text-xs font-medium text-[#555555]">Smart Team</p>
@@ -67,7 +83,7 @@
             </div>
         </div>
 
-        <!-- KPI 3 : Réalisations -->
+        <!-- KPI 4 : Réalisations -->
         <div class="rounded-2xl border border-[#E5E7EB] bg-white p-5 transition-colors hover:border-[#1A1A1A]">
             <div class="flex items-center justify-between">
                 <p class="text-xs font-medium text-[#555555]">Réalisations</p>
@@ -79,11 +95,11 @@
             </div>
             <div class="mt-2">
                 <span class="text-3xl font-bold tracking-tight text-[#1A1A1A]">{{ \App\Models\PortfolioProject::active()->count() }}</span>
-                <p class="text-[11px] text-[#555555] mt-1">projets publiés</p>
+                <p class="text-[11px] text-[#555555] mt-1">projets pointillés</p>
             </div>
         </div>
 
-        <!-- KPI 4 : Sécurité & Slug Furtif -->
+        <!-- KPI 5 : Sécurité & Slug Furtif -->
         <div class="rounded-2xl border border-[#E5E7EB] bg-white p-5 transition-colors hover:border-[#1A1A1A]">
             <div class="flex items-center justify-between">
                 <p class="text-xs font-medium text-[#555555]">Sécurité d'accès</p>
@@ -193,6 +209,93 @@
                     </div>
                 @endif
             </div>
+
+            <!-- Dernières Candidatures Créateurs -->
+            <div class="rounded-2xl border border-[#E5E7EB] bg-white p-6">
+                @php
+                    $recentCreators = \App\Models\Creator::query()->latest()->take(5)->get();
+                @endphp
+
+                <div class="flex items-center justify-between pb-4 border-b border-[#E5E7EB]">
+                    <div>
+                        <h3 class="text-base font-bold text-[#1A1A1A]">Dernières Candidatures Créateurs</h3>
+                        <p class="text-xs text-[#555555]">Candidatures reçues via le formulaire Rejoindre le Réseau</p>
+                    </div>
+
+                    @if($recentCreators->isNotEmpty())
+                        <a href="{{ route('admin.creators.index') }}" 
+                           class="text-xs font-bold text-[#F5791F] hover:underline flex items-center gap-1">
+                            <span>Voir tout ({{ \App\Models\Creator::count() }})</span>
+                            <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                            </svg>
+                        </a>
+                    @endif
+                </div>
+
+                @if($recentCreators->isEmpty())
+                    <div class="py-8 text-center text-xs text-[#555555]">
+                        <p>Aucune candidature de créateur enregistrée pour le moment.</p>
+                    </div>
+                @else
+                    <div class="overflow-x-auto mt-4">
+                        <table class="w-full text-left text-xs">
+                            <thead class="text-[11px] font-bold text-[#555555] uppercase tracking-wider bg-[#FAF4EF]/40">
+                                <tr>
+                                    <th scope="col" class="py-3 pl-3 pr-3">Créateur</th>
+                                    <th scope="col" class="px-3 py-3">Plateforme & Niche</th>
+                                    <th scope="col" class="px-3 py-3 text-center">Statut</th>
+                                    <th scope="col" class="py-3 pl-3 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-[#E5E7EB]">
+                                @foreach($recentCreators as $creatorItem)
+                                    <tr class="hover:bg-slate-50/60 transition-colors">
+                                        <td class="py-3 pl-3 pr-3">
+                                            <div class="flex items-center gap-3">
+                                                <div class="h-9 w-9 rounded-xl bg-[#FAF4EF] border border-[#E5E7EB] overflow-hidden shrink-0 flex items-center justify-center font-bold text-xs text-[#F5791F]">
+                                                    @if($creatorItem->photo_url)
+                                                        <img src="{{ $creatorItem->photo_url }}" alt="{{ $creatorItem->name }}" class="h-full w-full object-cover">
+                                                    @else
+                                                        {{ strtoupper(substr($creatorItem->name, 0, 1)) }}
+                                                    @endif
+                                                </div>
+                                                <div>
+                                                    <span class="font-bold text-[#1A1A1A] block">{{ $creatorItem->name }}</span>
+                                                    <span class="text-[11px] text-[#555555] block">{{ $creatorItem->formatted_handle }}</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-3 py-3">
+                                            <span class="font-bold text-[#1A1A1A] block">{{ $creatorItem->platform }}</span>
+                                            <span class="text-[11px] text-[#555555] block">
+                                                {{ !empty($creatorItem->niches) ? implode(', ', array_slice($creatorItem->niches, 0, 2)) : 'Généraliste' }}
+                                            </span>
+                                        </td>
+                                        <td class="px-3 py-3 text-center">
+                                            @if($creatorItem->is_active)
+                                                <span class="inline-flex items-center rounded-md border border-[#16A34A]/30 bg-[#16A34A]/10 px-2 py-0.5 text-[10px] font-bold text-[#16A34A]">
+                                                    En ligne
+                                                </span>
+                                            @else
+                                                <span class="inline-flex items-center rounded-md border border-[#F5791F]/30 bg-[#F5791F]/10 px-2 py-0.5 text-[10px] font-bold text-[#F5791F]">
+                                                    En attente
+                                                </span>
+                                            @endif
+                                        </td>
+                                        <td class="py-3 pl-3 text-right">
+                                            <a href="{{ route('admin.creators.show', $creatorItem) }}" 
+                                               class="rounded-lg border border-[#E5E7EB] bg-white px-2 py-1 text-xs font-bold text-[#1A1A1A] hover:bg-[#FAF4EF] hover:text-[#F5791F] transition-colors">
+                                                Détails
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @endif
+            </div>
         </div>
 
         <!-- Colonne Droite (1/3) : Actions Rapides & Statut Système -->
@@ -216,6 +319,24 @@
                             <div>
                                 <span class="text-xs font-bold text-[#1A1A1A] group-hover:text-[#F5791F] block">Rendez-vous</span>
                                 <span class="text-[11px] text-[#555555]">Planning et demandes</span>
+                            </div>
+                        </div>
+                        <svg class="h-4 w-4 text-[#555555] group-hover:text-[#F5791F] transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+
+                    <a href="{{ Route::has('admin.creators.index') ? route('admin.creators.index') : '#' }}" 
+                       class="flex items-center justify-between p-3 rounded-xl border border-[#E5E7EB] hover:border-[#F5791F] hover:bg-[#FAF4EF]/40 transition-colors group">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 rounded-lg bg-[#FAF4EF] text-[#F5791F]">
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632zM18 10.5h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-[#1A1A1A] group-hover:text-[#F5791F] block">Réseau Créateurs</span>
+                                <span class="text-[11px] text-[#555555]">Candidatures et visibilité</span>
                             </div>
                         </div>
                         <svg class="h-4 w-4 text-[#555555] group-hover:text-[#F5791F] transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

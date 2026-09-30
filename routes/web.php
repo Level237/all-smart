@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentController;
+use App\Http\Controllers\Admin\CreatorController as AdminCreatorController;
 use App\Http\Controllers\Admin\PortfolioProjectController as AdminPortfolioProjectController;
 use App\Http\Controllers\Admin\TeamController as AdminTeamController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\CreatorApplicationController;
+use App\Models\Creator;
 use App\Models\PortfolioProject;
 use App\Models\Team;
 use Illuminate\Support\Facades\Route;
@@ -129,7 +132,8 @@ Route::view('/createur-de-contenu', 'CreateurContenu');
 Route::redirect('/services/marketing-d-influence/createur-de-contenu', '/createur-de-contenu');
 Route::redirect('/je-suis-createur-de-contenu', '/createur-de-contenu');
 
-Route::view('/rejoindre-le-reseau', 'RejoindreReseau');
+Route::view('/rejoindre-le-reseau', 'RejoindreReseau')->name('creators.apply');
+Route::post('/rejoindre-le-reseau', [CreatorApplicationController::class, 'store'])->middleware('throttle:5,1')->name('creators.apply.submit');
 Route::redirect('/services/marketing-d-influence/rejoindre', '/rejoindre-le-reseau');
 Route::redirect('/rejoindre-reseau', '/rejoindre-le-reseau');
 
@@ -173,6 +177,9 @@ Route::prefix($adminPrefix)->middleware(['admin'])->group(function () {
     Route::resource('team', AdminTeamController::class, ['as' => 'admin']);
     Route::resource('portfolio', AdminPortfolioProjectController::class, ['as' => 'admin']);
     Route::resource('appointments', AdminAppointmentController::class, ['as' => 'admin'])->only(['index', 'show', 'update', 'destroy']);
+    Route::resource('creators', AdminCreatorController::class, ['as' => 'admin']);
+    Route::post('creators/{creator}/toggle-active', [AdminCreatorController::class, 'toggleActive'])->name('admin.creators.toggle-active');
+    Route::post('creators/{creator}/update-order', [AdminCreatorController::class, 'updateOrder'])->name('admin.creators.update-order');
 });
 
 // Leurre de sécurité : /admin renvoie systématiquement une erreur 404
