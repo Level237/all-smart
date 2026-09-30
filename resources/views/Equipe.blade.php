@@ -5,27 +5,27 @@
 
 @section('content')
 
-<!-- Hero Banner Équipe Dédié -->
-<section class="relative min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] flex items-center justify-center overflow-hidden">
-    <!-- Image de fond avec overlay sombre -->
+<!-- Hero Banner Équipe Dédié Épuré -->
+<section class="relative min-h-[340px] sm:min-h-[380px] lg:min-h-[420px] flex items-center justify-center overflow-hidden">
+    <!-- Image de fond avec overlay optimisé -->
     <div class="absolute inset-0 h-full w-full">
         <img src="{{ asset('assets/slideabout.jpg') }}" 
              alt="La Smart Team AllSmart" 
              class="h-full w-full object-cover object-center">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-[1px]"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-black/45 backdrop-blur-[1px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
     </div>
 
-    <!-- Contenu Textuel du Hero -->
-    <div class="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
-        <span class="font-zeyada text-4xl sm:text-5xl md:text-6xl text-[#F5791F] block mb-2">
-            L'intelligence collective
+    <!-- Contenu Textuel Épuré : Titre Clair & Simple Description -->
+    <div class="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center pt-20 pb-12">
+        <span class="font-zeyada text-3xl sm:text-4xl text-[#F5791F] block mb-1">
+            Les Talents
         </span>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-            Les talents et experts derrière vos plus grands succès
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight uppercase">
+            La Smart Team
         </h1>
-        <p class="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
-            Stratèges de marque, créateurs de contenus, directeurs artistiques et coordinateurs événementiels réunis par une exigence sans compromis.
+        <p class="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-white/90 max-w-xl mx-auto font-light leading-relaxed">
+            Les talents et experts derrière chacun de vos succès.
         </p>
     </div>
 </section>
