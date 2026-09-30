@@ -160,6 +160,11 @@
     </div>
 </div>
 
+    @php
+        $teamMembers = $teams ?? \App\Models\Team::query()->active()->ordered()->get();
+    @endphp
+
+    @if($teamMembers && $teamMembers->isNotEmpty())
     <section class="mt-24 pb-8 lg:mt-28">
     <div class="bg-[#F5791F] px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
         <div class="mx-auto max-w-[1400px]">
@@ -171,55 +176,12 @@
 
             <!-- Grid des membres -->
             <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                @php
-                    $team = [
-                        [
-                            'name' => 'Danièle<br><span class="font-black">Nono</span>',
-                            'role' => 'Fondatrice',
-                            'label' => 'Celle qui paie les salaires',
-                            'image' => 'assets/Daniele-Nono.jpg',
-                        ],
-                        [
-                            'name' => 'Rich<br><span class="font-black">TIENTCHEU</span>',
-                            'role' => '',
-                            'label' => '',
-                            'image' => 'assets/Daniele-Nono.jpg',
-                        ],
-                        [
-                            'name' => 'Andréa',
-                            'role' => '',
-                            'label' => '',
-                            'image' => 'assets/Daniele-Nono.jpg',
-                        ],
-
-                        [
-                            'name' => 'Célia',
-                            'role' => '',
-                            'label' => '',
-                            'image' => 'assets/Daniele-Nono.jpg',
-                        ],
-
-                         [
-                            'name' => 'Flore',
-                            'role' => '',
-                            'label' => '',
-                            'image' => 'assets/Daniele-Nono.jpg',
-                        ],
-                         [
-                            'name' => 'Hilary',
-                            'role' => '',
-                            'label' => '',
-                            'image' => 'assets/Daniele-Nono.jpg',
-                        ],
-                    ];
-                @endphp
-
-                @foreach($team as $member)
+                @foreach($teamMembers as $member)
                     <div class="group relative overflow-hidden rounded-lg bg-[#5f8d96] shadow-lg transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl">
                         <!-- Image -->
                         <div class="relative h-[440px] overflow-hidden">
-                            <img src="{{ asset($member['image']) }}" 
-                                 alt="{{ strip_tags($member['name']) }}" 
+                            <img src="{{ $member->photo_url }}" 
+                                 alt="{{ strip_tags($member->name) }}" 
                                  class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
                         </div>
 
@@ -229,44 +191,54 @@
                             
                             <!-- Nom (toujours visible) -->
                             <h3 class="text-2xl font-medium leading-tight text-white sm:text-3xl lg:text-4xl">
-                                {!! $member['name'] !!}
+                                {!! $member->name !!}
                             </h3>
 
                             <!-- Contenu visible sur mobile et révélé au hover sur desktop -->
                             <div class="mt-3 overflow-hidden transition-all duration-500 ease-out opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0">
-                                @if($member['role'])
-                                    <p class="text-xl font-medium text-white sm:text-2xl">{{ $member['role'] }}</p>
+                                @if($member->role)
+                                    <p class="text-xl font-medium text-white sm:text-2xl">{{ $member->role }}</p>
                                 @endif
 
-                                @if($member['label'])
-                                    <p class="mt-1 font-['Zeyada'] text-lg text-white/90 sm:text-xl">{{ $member['label'] }}</p>
+                                @if($member->label)
+                                    <p class="mt-1 font-['Zeyada'] text-lg text-white/90 sm:text-xl">{{ $member->label }}</p>
                                 @endif
 
-                                <!-- Icônes sociales -->
-                                <div class="mt-3 flex items-center justify-end gap-2">
-                                    <a href="#" aria-label="Instagram" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5">
-                                            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                                            <circle cx="12" cy="12" r="4"></circle>
-                                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
-                                        </svg>
-                                    </a>
-                                    <a href="#" aria-label="Facebook" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5">
-                                            <path d="M13.5 21v-8h2.7l.4-3h-3.1V7.5c0-.9.3-1.5 1.6-1.5H17V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3V10H8v3h2.4v8h3.1Z"/>
-                                        </svg>
-                                    </a>
-                                    <a href="#" aria-label="X" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5">
-                                            <path d="M18.9 2h3.4l-7.4 8.5L22.6 22h-6.8l-5.3-7.8L4 22H.6l7.9-9L1.2 2h7l4.8 7.1L18.9 2Zm-1.2 18h1.9L7.1 3.9H5.1L17.7 20Z"/>
-                                        </svg>
-                                    </a>
-                                    <a href="#" aria-label="LinkedIn" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5">
-                                            <path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.7h2.9V18H5.5V9.7Zm4.8 0h2.8v1.1h.1c.4-.7 1.3-1.5 2.8-1.5 3 0 3.5 2 3.5 4.7V18h-2.9v-16.8h2.9v1.1c.7-.9 1.9-1.9 4-1.9 4.3 0 5.1 2.8 5.1 6.5V18h-2.9v-16.8H10.3V9.7Z"/>
-                                        </svg>
-                                    </a>
-                                </div>
+                                <!-- Icônes sociales dynamiques -->
+                                @if($member->instagram_url || $member->facebook_url || $member->x_url || $member->linkedin_url)
+                                    <div class="mt-3 flex items-center justify-end gap-2">
+                                        @if($member->instagram_url)
+                                            <a href="{{ $member->instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-3.5 w-3.5">
+                                                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                                    <circle cx="12" cy="12" r="4"></circle>
+                                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
+                                                </svg>
+                                            </a>
+                                        @endif
+                                        @if($member->facebook_url)
+                                            <a href="{{ $member->facebook_url }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5">
+                                                    <path d="M13.5 21v-8h2.7l.4-3h-3.1V7.5c0-.9.3-1.5 1.6-1.5H17V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.3V10H8v3h2.4v8h3.1Z"/>
+                                                </svg>
+                                            </a>
+                                        @endif
+                                        @if($member->x_url)
+                                            <a href="{{ $member->x_url }}" target="_blank" rel="noopener noreferrer" aria-label="X" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5">
+                                                    <path d="M18.9 2h3.4l-7.4 8.5L22.6 22h-6.8l-5.3-7.8L4 22H.6l7.9-9L1.2 2h7l4.8 7.1L18.9 2Zm-1.2 18h1.9L7.1 3.9H5.1L17.7 20Z"/>
+                                                </svg>
+                                            </a>
+                                        @endif
+                                        @if($member->linkedin_url)
+                                            <a href="{{ $member->linkedin_url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="flex h-7 w-7 items-center justify-center rounded-full border border-white text-white transition-all duration-300 hover:bg-white hover:text-[#5f8d96]">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5">
+                                                    <path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.7h2.9V18H5.5V9.7Zm4.8 0h2.8v1.1h.1c.4-.7 1.3-1.5 2.8-1.5 3 0 3.5 2 3.5 4.7V18h-2.9v-16.8h2.9v1.1c.7-.9 1.9-1.9 4-1.9 4.3 0 5.1 2.8 5.1 6.5V18h-2.9v-16.8H10.3V9.7Z"/>
+                                                </svg>
+                                            </a>
+                                        @endif
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -275,6 +247,7 @@
         </div>
     </div>
 </section>
+    @endif
 
 </div>
 </div>

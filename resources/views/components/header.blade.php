@@ -53,7 +53,7 @@
                     </div>
                 </div>
 
-                <a href="/#succes"
+                <a href="/realisations"
                     class="text-sm xl:text-base font-bold text-gray-900 transition-colors hover:text-[#F5791F]">Réalisations</a>
 
                 <a href="/#blog"
@@ -149,7 +149,7 @@
                         </div>
                     </div>
 
-                    <a href="/#succes"
+                    <a href="/realisations"
                         class="block px-4 py-3 text-lg font-bold text-gray-900 transition-all rounded-xl hover:bg-white/50 hover:text-[#F5791F] hover:translate-x-2">Réalisations</a>
                     <a href="/#blog"
                         class="block px-4 py-3 text-lg font-bold text-gray-900 transition-all rounded-xl hover:bg-white/50 hover:text-[#F5791F] hover:translate-x-2">Blog</a>

@@ -19,6 +19,6 @@
 </section>
 
 <!-- Orange Content Section -->
- <x-about.intro />
+<x-about.intro :teams="$teams ?? null" />
 <x-homepage.cta />
 @endsection

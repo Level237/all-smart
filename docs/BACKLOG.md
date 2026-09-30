@@ -23,14 +23,14 @@ Ce fichier recense l'ensemble des tâches et fonctionnalités ordonnées.
 - [x] **B-08** : Modèle, migration et seeder pour l'administrateur (`User` / rôle `admin`, méthode `isAdmin()`, seeder `AdminUserSeeder`).
 - [x] **B-09** : Authentification Admin sécurisée : route `/admin/login`, contrôleur d'auth, rate-limiting anti brute-force, protection CSRF, middleware `AdminMiddleware`, déconnexion, tests automatisés.
 - [x] **B-10** : Layout de l'administration (`resources/views/admin/layouts/app.blade.php`) et dashboard d'accueil admin.
-- [ ] **B-11** : Module Rendez-vous Admin : migration `appointments`, tableau de bord avec listing des demandes, filtres par statut (*Nouveau*, *Confirmé*, *Terminé*, *Annulé*) et détails.
-- [ ] **B-12** : Module Équipe Admin : migration `team_members`, CRUD complet (nom, fonction, bio, ordre d'affichage, réseaux sociaux, upload photo).
-- [ ] **B-13** : Module Réalisations Admin : migration `portfolio_projects`, CRUD complet (titre, client, description, service lié, upload d'images).
-- [ ] **B-14** : Sécurisation du stockage et uploads d'images (`storage:link`, validation MIME/taille).
+- [x] **B-11** : Module Rendez-vous Admin : migration `appointments`, tableau de bord avec listing des demandes, filtres par statut (*Nouveau*, *Confirmé*, *Terminé*, *Annulé*) et détails.
+- [x] **B-12** : Module Équipe Admin : migration `teams`, CRUD complet (nom, fonction, bio, ordre d'affichage, réseaux sociaux, upload photo).
+- [x] **B-13** : Module Réalisations Admin : migration `portfolio_projects`, CRUD complet (titre, client, description, service lié, upload d'images).
+- [x] **B-14** : Sécurisation du stockage et uploads d'images (`storage:link`, validation MIME/taille).
 
 ### Phase 3 — Dynamisation Front & Recette
-- [ ] **B-15** : Dynamisation de la section Équipe sur la page "Qui Sommes-Nous" (consommation des données BDD).
-- [ ] **B-16** : Dynamisation du slider/grille de Réalisations sur l'Accueil et les pages Services correspondantes.
+- [x] **B-15** : Dynamisation de la section Équipe sur la page "Qui Sommes-Nous" (consommation des données BDD).
+- [x] **B-16** : Création et dynamisation de la page Réalisations (`/realisations`) et des liens de navigation (Header, Homepage).
 - [ ] **B-17** : Audit de sécurité complet par Paul (vérification des accès admin, inputs, headers) → rapport dans `docs/SECURITY-JOURNAL.md`.
 - [ ] **B-18** : Recette QA de bout en bout par Emile (parcours public + gestion admin) → journal `docs/BUG-JOURNAL.md`.
 - [ ] **B-19** : Optimisation SEO et méta-données par Emilie (balises Hn, OpenGraph, title/descriptions).

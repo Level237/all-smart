@@ -1,6 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
+use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentController;
+use App\Http\Controllers\Admin\PortfolioProjectController as AdminPortfolioProjectController;
+use App\Http\Controllers\Admin\TeamController as AdminTeamController;
+use App\Http\Controllers\AppointmentController;
+use App\Models\PortfolioProject;
+use App\Models\Team;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -56,7 +62,10 @@ Route::get('/services', function () {
     ]);
 });
 
-Route::view('/qui-sommes-nous', 'AboutUs');
+Route::get('/qui-sommes-nous', function () {
+    $teams = Team::query()->active()->ordered()->get();
+    return view('AboutUs', compact('teams'));
+});
 
 Route::redirect('/packs', '/packs/visibilite');
 
@@ -121,8 +130,16 @@ Route::view('/contact', 'Contact');
 Route::redirect('/nous-contacter', '/contact');
 
 Route::view('/rendez-vous', 'RendezVous');
+Route::post('/rendez-vous', [AppointmentController::class, 'store'])->middleware('throttle:5,1')->name('appointments.store');
 Route::redirect('/prendre-rendez-vous', '/rendez-vous');
 Route::redirect('/rendezvous', '/rendez-vous');
+
+Route::get('/realisations', function () {
+    $projects = PortfolioProject::query()->active()->ordered()->get();
+    $services = PortfolioProject::SERVICES;
+    return view('Realisations', compact('projects', 'services'));
+})->name('portfolio.index');
+Route::redirect('/portfolio', '/realisations');
 
 /*
 |--------------------------------------------------------------------------
@@ -146,6 +163,9 @@ Route::prefix($adminPrefix)->middleware(['admin'])->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
+    Route::resource('team', AdminTeamController::class, ['as' => 'admin']);
+    Route::resource('portfolio', AdminPortfolioProjectController::class, ['as' => 'admin']);
+    Route::resource('appointments', AdminAppointmentController::class, ['as' => 'admin'])->only(['index', 'show', 'update', 'destroy']);
 });
 
 // Leurre de sécurité : /admin renvoie systématiquement une erreur 404

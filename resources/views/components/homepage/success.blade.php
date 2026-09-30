@@ -106,7 +106,7 @@
 
     <!-- Conteneur pour le Bouton CTA (Centré et contraint en largeur) -->
     <div class="px-4 mx-auto mt-12 max-w-7xl text-center">
-        <a href="#portfolio"
+        <a href="/realisations"
             class="inline-block bg-[#F5791F] hover:bg-[#e06917] text-white font-bold text-base md:text-lg px-8 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 focus:ring-4 focus:ring-[#F5791F]/50">
             Découvrir toutes nos réalisations
         </a>

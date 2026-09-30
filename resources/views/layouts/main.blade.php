@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="@yield('meta_description', 'Allsmart - Faites rayonner votre marque avec notre expertise en stratégie, image et impact.')">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Allsmart')</title>
     
     <!-- Contenu additionnel pour la balise head (ex: preload image) -->

@@ -46,8 +46,8 @@
                 </div>
             </div>
             <div class="mt-2">
-                <span class="text-3xl font-bold tracking-tight text-[#1A1A1A]">0</span>
-                <p class="text-[11px] text-[#555555] mt-1">demande en attente</p>
+                <span class="text-3xl font-bold tracking-tight text-[#1A1A1A]">{{ \App\Models\Appointment::where('status', 'nouveau')->count() }}</span>
+                <p class="text-[11px] text-[#555555] mt-1">demande(s) en attente</p>
             </div>
         </div>
 
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="mt-2">
-                <span class="text-3xl font-bold tracking-tight text-[#1A1A1A]">--</span>
+                <span class="text-3xl font-bold tracking-tight text-[#1A1A1A]">{{ \App\Models\Team::active()->count() }}</span>
                 <p class="text-[11px] text-[#555555] mt-1">collaborateurs actifs</p>
             </div>
         </div>
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="mt-2">
-                <span class="text-3xl font-bold tracking-tight text-[#1A1A1A]">--</span>
+                <span class="text-3xl font-bold tracking-tight text-[#1A1A1A]">{{ \App\Models\PortfolioProject::active()->count() }}</span>
                 <p class="text-[11px] text-[#555555] mt-1">projets publiés</p>
             </div>
         </div>
@@ -107,36 +107,91 @@
         <!-- Colonne Gauche (2/3) : Tableau des dernières demandes de RDV -->
         <div class="lg:col-span-2 space-y-6">
             <div class="rounded-2xl border border-[#E5E7EB] bg-white p-6">
+                @php
+                    $recentAppointments = \App\Models\Appointment::query()->recent()->take(5)->get();
+                @endphp
+
                 <div class="flex items-center justify-between pb-4 border-b border-[#E5E7EB]">
                     <div>
                         <h3 class="text-base font-bold text-[#1A1A1A]">Dernières Demandes de Rendez-vous</h3>
                         <p class="text-xs text-[#555555]">Consultations enregistrées depuis le formulaire public</p>
                     </div>
+
+                    @if($recentAppointments->isNotEmpty())
+                        <a href="{{ route('admin.appointments.index') }}" class="text-xs font-bold text-[#F5791F] hover:underline">
+                            Tout voir ({{ \App\Models\Appointment::count() }})
+                        </a>
+                    @endif
                 </div>
 
-                <!-- Empty State sobre -->
-                <div class="mt-6">
-                    <div class="rounded-xl border border-dashed border-[#E5E7EB] bg-white p-8 text-center">
-                        <div class="mx-auto flex h-10 w-10 items-center justify-center rounded-lg bg-[#FAF4EF] text-[#F5791F]">
-                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <h4 class="mt-3 text-sm font-bold text-[#1A1A1A]">Aucune demande en attente</h4>
-                        <p class="mt-1 text-xs text-[#555555] max-w-md mx-auto">
-                            Les futures réservations soumises par vos prospects s'afficheront ici avec leurs créneaux et leurs coordonnées.
-                        </p>
-                        <div class="mt-5">
-                            <a href="/rendez-vous" target="_blank" 
-                               class="inline-flex items-center gap-2 rounded-lg bg-[#1A1A1A] px-4 py-2 text-xs font-bold text-white hover:bg-[#F5791F] transition-colors">
-                                <span>Voir le formulaire de rendez-vous</span>
-                                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                @if($recentAppointments->isEmpty())
+                    <!-- Empty State sobre -->
+                    <div class="mt-6">
+                        <div class="rounded-xl border border-dashed border-[#E5E7EB] bg-white p-8 text-center">
+                            <div class="mx-auto flex h-10 w-10 items-center justify-center rounded-lg bg-[#FAF4EF] text-[#F5791F]">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
-                            </a>
+                            </div>
+                            <h4 class="mt-3 text-sm font-bold text-[#1A1A1A]">Aucune demande en attente</h4>
+                            <p class="mt-1 text-xs text-[#555555] max-w-md mx-auto">
+                                Les futures réservations soumises par vos prospects s'afficheront ici avec leurs créneaux et leurs coordonnées.
+                            </p>
+                            <div class="mt-5">
+                                <a href="/rendez-vous" target="_blank" 
+                                   class="inline-flex items-center gap-2 rounded-lg bg-[#1A1A1A] px-4 py-2 text-xs font-bold text-white hover:bg-[#F5791F] transition-colors">
+                                    <span>Voir le formulaire de rendez-vous</span>
+                                    <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @else
+                    <!-- Table des demandes récentes -->
+                    <div class="mt-4 overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead class="text-[#555555] font-bold text-[11px] uppercase border-b border-[#E5E7EB]">
+                                <tr>
+                                    <th scope="col" class="py-3 pr-3">Prospect</th>
+                                    <th scope="col" class="px-3 py-3">Pôle</th>
+                                    <th scope="col" class="px-3 py-3">Date & Créneau</th>
+                                    <th scope="col" class="px-3 py-3 text-center">Statut</th>
+                                    <th scope="col" class="py-3 pl-3 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-[#E5E7EB]">
+                                @foreach($recentAppointments as $item)
+                                    <tr class="hover:bg-slate-50/60 transition-colors">
+                                        <td class="py-3 pr-3">
+                                            <span class="font-bold text-[#1A1A1A] block">{{ $item->name }}</span>
+                                            <span class="text-[11px] text-[#555555] block">{{ $item->company ?: $item->email }}</span>
+                                        </td>
+                                        <td class="px-3 py-3 text-[#1A1A1A] font-medium">
+                                            {{ $item->service }}
+                                        </td>
+                                        <td class="px-3 py-3 text-[#555555]">
+                                            <span class="font-bold text-[#1A1A1A] block">{{ $item->date->translatedFormat('d M') }}</span>
+                                            <span class="text-[11px] text-[#F5791F] font-mono">{{ $item->time }}</span>
+                                        </td>
+                                        <td class="px-3 py-3 text-center">
+                                            <span class="inline-flex items-center rounded-md border px-2 py-0.5 text-[10px] font-bold {{ $item->status_badge_classes }}">
+                                                {{ $item->status_label }}
+                                            </span>
+                                        </td>
+                                        <td class="py-3 pl-3 text-right">
+                                            <a href="{{ route('admin.appointments.show', $item) }}" 
+                                               class="rounded-lg border border-[#E5E7EB] bg-white px-2 py-1 text-xs font-bold text-[#1A1A1A] hover:bg-[#FAF4EF] hover:text-[#F5791F] transition-colors">
+                                                Détails
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @endif
             </div>
         </div>
 
